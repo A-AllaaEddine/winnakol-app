@@ -1,0 +1,32 @@
+{
+  "cli": {
+    "version": ">= 7.6.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_BASE_URL": "http://192.168.1.6:3000",
+        "EXPO_PUBLIC_FULLAUTH_URL": "http://192.168.1.6:3000"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_BASE_URL": "https://winnakol.vercel.app",
+        "EXPO_PUBLIC_FULLAUTH_URL": "https://winnakol.vercel.app"
+      }
+    },
+    "production": {
+      "env": {
+        "EXPO_PUBLIC_BASE_URL": "https://winnakol.vercel.app",
+        "EXPO_PUBLIC_FULLAUTH_URL": "https://winnakol.vercel.app"
+      },
+      "autoIncrement": true
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

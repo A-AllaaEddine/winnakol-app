@@ -1,0 +1,28 @@
+export const ResetEn = {
+  win: 'Win',
+  nakol: 'Nakol',
+  title: 'Reset Your Password',
+  homeBtn: 'Home',
+  resetBtn: 'Save',
+  resetEmailSentText: 'An email has been sent to your email !',
+  invalidToken:
+    'The link is invalid. Please make sure you copied the full link.',
+  jwtExpired:
+    'The link has expired, go to login and click on reset password to send a new verification link.',
+  errorResetingPassword: 'There was an error trying to reset your password.',
+  newPasswordLabel: 'New Password',
+  confirmPasswordLabel: 'Confirm Password',
+  passwordsDontMatch: "Passwords don't match",
+  invalidPasswordText: 'Password must be at least 8 characters.',
+  savingTxt: 'Saving...',
+  passwordResetSuccess: 'Password changed.',
+  emailLabel: 'Email',
+  sendEmailBtn: 'Send Email',
+  sendingTxt: 'Sending...',
+  backTologinTxt: 'Login',
+  emailSentTxt: 'Email sent.',
+  errorSendingEmail: 'There was an error sending the email.',
+  emailRequired: 'Email is required.',
+  validEmail: 'The email must be a valid email address.',
+  resetText: 'Reset your password',
+};
