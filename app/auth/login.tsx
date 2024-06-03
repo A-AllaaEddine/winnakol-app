@@ -31,7 +31,7 @@ const defaultFormFields = {
 };
 
 const Login = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isCheckingSession, setIsChecingSession] = useState<boolean>(true);
   const { update, session, status } = useSession();
   // const { expoPushToken, notification } = usePushNotification();

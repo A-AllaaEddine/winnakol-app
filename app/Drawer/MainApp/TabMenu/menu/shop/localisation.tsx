@@ -156,7 +156,7 @@ const localisation = () => {
                 }}
                 value={value}
                 defaultValue=""
-                className="w-full h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-md px-2 mt-3"
+                className="w-full h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-full px-2 mt-3"
                 placeholder={i18n.t('streetLabel')}
               />
             )}
@@ -220,7 +220,7 @@ const localisation = () => {
         <View className="w-full h-auto flex justify-start items-center ">
           <Pressable
             onPress={handleSubmit(onSubmit)}
-            className="w-full h-14 p-2 rounded-md bg-black dark:bg-dark-btn flex justify-center items-center my-6"
+            className="w-full h-14 p-2 rounded-full bg-black dark:bg-dark-btn flex justify-center items-center my-6"
           >
             {isLoading ? (
               <Text className="text-lg  font-poppins-bold text-white">

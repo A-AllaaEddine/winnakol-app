@@ -204,7 +204,7 @@ const ShopReportModal = (props: SheetProps<'shop-report-sheet'>) => {
           <View className="">
             <Pressable
               className="w-auto h-12 flex justify-center items-center text-white text-lg
-            font-bold bg-black dark:bg-dark-btn rounded-lg"
+            font-bold bg-black dark:bg-dark-btn rounded-full"
               onPress={handleSubmit}
               disabled={isLoading}
             >

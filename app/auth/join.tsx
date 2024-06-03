@@ -102,7 +102,12 @@ const Join = () => {
       });
       // TODO: add navigation to step one
       reset();
-      router.push('/Drawer/MainApp/TabMenu/home');
+      router.push({
+        pathname: '/Drawer/MainApp/TabMenu/home',
+        params: {
+          isNewUser: 'true',
+        },
+      });
     } catch (error: any) {
       setIsLoading(false);
       console.log(error);
@@ -132,7 +137,7 @@ const Join = () => {
   };
   return (
     <SafeAreaView className="bg-white dark:bg-dark">
-      <View className="w-full  font-poppins h-14 flex flex-row justify-center items-center">
+      <View className="w-full  font-poppins h-20 flex flex-row justify-center items-center">
         <LogoText width="120" height="120" />
       </View>
       <ScrollView

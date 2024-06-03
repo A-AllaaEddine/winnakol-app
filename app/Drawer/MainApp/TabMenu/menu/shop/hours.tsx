@@ -85,7 +85,7 @@ const WorkingHours = () => {
               },
             })
           }
-          className="w-full h-12 rounded-lg bg-white dark:bg-dark-card flex flex-row justify-between items-center p-2"
+          className="w-full h-12 rounded-full bg-white dark:bg-dark-card flex flex-row justify-between items-center py-2 px-4"
         >
           <Text className="text-lg text-black dark:text-dark">
             {startingHour}
@@ -110,7 +110,7 @@ const WorkingHours = () => {
               },
             })
           }
-          className="w-full h-12 rounded-lg bg-white dark:bg-dark-card flex flex-row justify-between items-center p-2"
+          className="w-full h-12 rounded-full bg-white dark:bg-dark-card flex flex-row justify-between items-center py-2 px-4"
         >
           <Text className="text-lg text-black dark:text-dark">
             {endingHour}
@@ -123,7 +123,7 @@ const WorkingHours = () => {
         </Pressable>
         <Pressable
           onPress={handleSubmit}
-          className="w-full h-14 p-2 rounded-md bg-black dark:bg-dark-btn flex justify-center items-center my-6"
+          className="w-full h-14 p-2 rounded-full bg-black dark:bg-dark-btn flex justify-center items-center my-6"
         >
           {isLoading ? (
             <Text className="text-lg  font-poppins-bold text-white">

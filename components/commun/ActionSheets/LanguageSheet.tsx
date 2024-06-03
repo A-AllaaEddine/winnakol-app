@@ -90,7 +90,7 @@ function LanguageSheet(props: SheetProps<'language-sheet'>) {
           }) => {
             return (
               <Pressable
-                className={`w-full h-10 flex flex-row justify-center items-center rounded-lg my-2 ${
+                className={`w-full h-10 flex flex-row justify-center items-center rounded-full my-2 ${
                   selectedLanguage === item.value
                     ? 'bg-main'
                     : 'bg-white dark:bg-dark'

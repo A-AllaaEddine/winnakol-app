@@ -75,7 +75,7 @@ const ReviewDeleteSheet = (props: SheetProps<'review-delete-sheet'>) => {
         </View>
         <Pressable
           onPress={handleDelete}
-          className="w-full h-14 p-2 rounded-md bg-[#ff5e52] flex justify-center items-center my-3"
+          className="w-full h-14 p-2 rounded-full bg-[#ff5e52] flex justify-center items-center my-3"
           disabled={isLoading}
         >
           {isLoading ? (

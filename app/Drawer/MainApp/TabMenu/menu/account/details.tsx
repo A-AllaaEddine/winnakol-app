@@ -1,23 +1,19 @@
-import Back from '@/components/commun/static/Back';
 import BackButton from '@/components/commun/static/BackButton';
 import { languageContext } from '@/context/LanguageContext';
 import { accountAr } from '@/locales/ar/account';
+import { CodeAr } from '@/locales/ar/code';
 import { accountEn } from '@/locales/en/account';
+import { CodeEn } from '@/locales/en/code';
 import { accountFr } from '@/locales/fr/account';
+import { CodeFr } from '@/locales/fr/code';
 import { trpc } from '@/trpc/client';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useSession } from '@fullauth/react-native';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useContext, useState } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import {
-  Appearance,
-  Pressable,
-  SafeAreaView,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
+import { Pressable, SafeAreaView, Text, TextInput, View } from 'react-native';
+import { SheetManager } from 'react-native-actions-sheet';
 import Toast from 'react-native-toast-message';
 import { z } from 'zod';
 
@@ -28,7 +24,11 @@ const Account = () => {
   const context = useContext(languageContext);
 
   const { i18n } = context?.translation({
-    translations: { en: accountEn, fr: accountFr, ar: accountAr },
+    translations: {
+      en: { ...accountEn, ...CodeEn },
+      fr: { ...accountFr, ...CodeFr },
+      ar: { ...accountAr, ...CodeAr },
+    },
   });
 
   const schema = z.object({
@@ -159,6 +159,11 @@ const Account = () => {
                 try {
                   await sendEmail();
                   setSent(true);
+                  SheetManager.show('email-code-sheet', {
+                    payload: {
+                      email: session?.user.email!,
+                    },
+                  });
                   // context?.setIsDelayed(true);
                   Toast.show({ type: 'success', text1: i18n.t('emailSent') });
                 } catch (error: any) {
@@ -169,7 +174,7 @@ const Account = () => {
                   });
                 }
               }}
-              className="bg-black rounded-lg p-2"
+              className="bg-black dark:bg-dark-btn rounded-lg p-2"
               disabled={isLoading}
             >
               <Text className="text-xs font-poppins-bold text-white">
@@ -196,7 +201,7 @@ const Account = () => {
                       }}
                       value={value}
                       defaultValue=""
-                      className="w-full h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-md px-2 mt-3"
+                      className="w-full h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-full px-2 mt-3"
                       placeholder={i18n.t('nameLabel')}
                     />
                   )}
@@ -232,7 +237,7 @@ const Account = () => {
                   }}
                   value={value}
                   defaultValue=""
-                  className="w-full h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-md px-2 mt-3"
+                  className="w-full h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-full px-2 mt-3"
                   placeholder={i18n.t('usernameLabel')}
                 />
               )}
@@ -267,7 +272,7 @@ const Account = () => {
                   keyboardType="email-address"
                   value={value}
                   defaultValue=""
-                  className="w-full h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-md px-2 mt-3"
+                  className="w-full h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-full px-2 mt-3"
                   placeholder={i18n.t('emailLabel')}
                 />
               )}
@@ -288,7 +293,7 @@ const Account = () => {
           ) : null}
           <Pressable
             onPress={handleSubmit(onSubmit)}
-            className="w-full h-14 p-2 rounded-md bg-black dark:bg-dark-btn flex justify-center items-center my-3"
+            className="w-full h-14 p-2 rounded-full bg-black dark:bg-dark-btn flex justify-center items-center my-3"
           >
             {isLoading ? (
               <Text className="text-lg  font-poppins-bold text-white">

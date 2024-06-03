@@ -126,7 +126,7 @@ const Phones = () => {
                     }}
                     value={phone}
                     defaultValue=""
-                    className="w-5/6 h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-md px-2 mt-3"
+                    className="w-5/6 h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-full px-2 mt-3"
                     placeholder="Phone Number"
                   />
                   {phones?.length! > 1 ? (
@@ -166,7 +166,7 @@ const Phones = () => {
           </View>
           <Pressable
             onPress={handleSubmit}
-            className="w-full h-14 p-2 rounded-md bg-black dark:bg-dark-btn flex justify-center items-center my-3"
+            className="w-full h-14 p-2 rounded-full bg-black dark:bg-dark-btn flex justify-center items-center my-3"
             disabled={isLoading}
           >
             {isLoading ? (

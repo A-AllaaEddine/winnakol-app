@@ -279,7 +279,7 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
               defaultValue=""
               textAlignVertical="center"
               placeholderTextColor={'black'}
-              className="w-full h-14  text-black dark:text-dark text-start text-lg bg-slate-100 dark:bg-dark-card rounded-md px-2 mt-3"
+              className="w-full h-14  text-black dark:text-dark text-start text-lg bg-slate-100 dark:bg-dark-card rounded-full px-4 mt-3"
               placeholder={i18n.t('nameLabel')}
             />
           </View>
@@ -298,7 +298,7 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
               defaultValue=""
               textAlignVertical="center"
               placeholderTextColor={'black'}
-              className="w-full h-14 text-black dark:text-dark  text-start text-lg bg-slate-100 dark:bg-dark-card rounded-md px-2 mt-3"
+              className="w-full h-14 text-black dark:text-dark  text-start text-lg bg-slate-100 dark:bg-dark-card rounded-full px-4 mt-3"
               placeholder={i18n.t('priceLabel')}
             />
           </View>
@@ -335,7 +335,7 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
                   },
                 })
               }
-              className="w-full h-12 rounded-lg bg-white dark:bg-dark-card flex flex-row justify-between items-center p-2"
+              className="w-full h-12 rounded-full bg-white dark:bg-dark-card flex flex-row justify-between items-center py-2 px-4"
             >
               <Text className="text-lg text-black dark:text-dark">
                 {i18n.t('selectedIngredientsPlaceholder')}
@@ -396,7 +396,7 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
                   },
                 })
               }
-              className="w-full h-12 rounded-lg bg-white dark:bg-dark-card flex flex-row justify-between items-center p-2"
+              className="w-full h-12 rounded-full bg-white dark:bg-dark-card flex flex-row justify-between items-center py-2 px-4"
             >
               <Text className="text-lg text-black dark:text-dark">
                 {formFields.category

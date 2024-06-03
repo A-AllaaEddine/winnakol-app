@@ -59,7 +59,7 @@ const IngredientSheet = (props: SheetProps<'ingredient-sheet'>) => {
           }) => {
             return (
               <Pressable
-                className={`w-full h-12 flex flex-row justify-center items-center rounded-lg my-2 ${
+                className={`w-full h-12 flex flex-row justify-center items-center rounded-full my-2 ${
                   ingredients.includes(item.value)
                     ? 'bg-main'
                     : 'bg-white dark:bg-dark'

@@ -13,7 +13,7 @@ import { trpc } from '@/trpc/client';
 import { FontAwesome } from '@expo/vector-icons';
 import { useSession } from '@fullauth/react-native';
 import { DrawerActions } from '@react-navigation/native';
-import { useNavigation } from 'expo-router';
+import { useLocalSearchParams, useNavigation } from 'expo-router';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import {
   FlatList,
@@ -25,8 +25,11 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { SheetManager } from 'react-native-actions-sheet';
 
 const Home = () => {
+  const searchParams = useLocalSearchParams();
+  const isNewUser = searchParams.isNewUser === 'true' ? true : false;
   const [selectedFilters, setSelectedFilters] = useState<string[]>(['all']);
   const [text, setText] = useState<string>('');
   const [refreshing, setRefreshing] = useState<boolean>(false);
@@ -46,12 +49,19 @@ const Home = () => {
   const context = useContext(languageContext);
 
   useEffect(() => {
-    navigation.addListener('beforeRemove', (e) => {
-      e.preventDefault();
-      // Do your stuff here
-      // navigation.dispatch(e.data.action);
-    });
-  }, []);
+    if (isNewUser) {
+      SheetManager.show('email-code-sheet', {
+        payload: {
+          email: session?.user.email!,
+        },
+      });
+    }
+    // navigation.addListener('beforeRemove', (e) => {
+    //   e.preventDefault();
+    //   // Do your stuff here
+    //   // navigation.dispatch(e.data.action);
+    // });
+  }, [isNewUser]);
 
   const onChangeText = (e: string) => {
     setText(e);

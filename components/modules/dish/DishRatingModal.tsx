@@ -185,7 +185,7 @@ const DishRatingModal = (props: SheetProps<'dish-rating-sheet'>) => {
           <View className="mt-4 ">
             <Pressable
               className="w-auto h-12 flex justify-center items-center text-lg
-              font-bold bg-black dark:bg-dark-btn rounded-lg"
+              font-bold bg-black dark:bg-dark-btn rounded-full"
               onPress={handleSubmit}
               // disabled={isLoading}
             >

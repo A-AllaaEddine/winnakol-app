@@ -273,7 +273,7 @@ const DishAddModal = (props: SheetProps<'dish-add-sheet'>) => {
               defaultValue=""
               textAlignVertical="center"
               placeholderTextColor={'gray'}
-              className="w-full h-14  text-black dark:text-dark text-start text-lg bg-slate-100 dark:bg-dark-card rounded-md px-2 mt-3"
+              className="w-full h-14  text-black dark:text-dark text-start text-lg bg-slate-100 dark:bg-dark-card rounded-full px-4 mt-3"
               placeholder={i18n.t('nameLabel')}
             />
           </View>
@@ -295,7 +295,7 @@ const DishAddModal = (props: SheetProps<'dish-add-sheet'>) => {
               defaultValue=""
               textAlignVertical="center"
               placeholderTextColor={'gray'}
-              className="w-full h-14  text-black dark:text-dark  text-start text-lg bg-slate-100 dark:bg-dark-card rounded-md px-2 mt-3"
+              className="w-full h-14  text-black dark:text-dark  text-start text-lg bg-slate-100 dark:bg-dark-card rounded-full px-4 mt-3"
               placeholder={i18n.t('priceLabel')}
             />
           </View>
@@ -332,7 +332,7 @@ const DishAddModal = (props: SheetProps<'dish-add-sheet'>) => {
                   },
                 })
               }
-              className="w-full h-12 rounded-lg bg-white dark:bg-dark-card flex flex-row justify-between items-center p-2"
+              className="w-full h-12 rounded-full bg-white dark:bg-dark-card flex flex-row justify-between items-center py-2 px-4"
             >
               <Text className="text-lg text-black dark:text-dark">
                 {i18n.t('selectedIngredientsPlaceholder')}
@@ -393,7 +393,7 @@ const DishAddModal = (props: SheetProps<'dish-add-sheet'>) => {
                   },
                 })
               }
-              className="w-full h-12 rounded-lg bg-white dark:bg-dark-card flex flex-row justify-between items-center p-2"
+              className="w-full h-12 rounded-full bg-white dark:bg-dark-card flex flex-row justify-between items-center py-2 px-4"
             >
               <Text className="text-lg text-black dark:text-dark">
                 {formFields.category
@@ -411,7 +411,7 @@ const DishAddModal = (props: SheetProps<'dish-add-sheet'>) => {
           <View className="">
             <Pressable
               className="w-auto h-12 flex justify-center items-center  text-lg
-            font-bold bg-black dark:bg-dark-btn rounded-lg"
+            font-bold bg-black dark:bg-dark-btn rounded-full"
               onPress={handleSubmit}
               disabled={isLoading}
             >
