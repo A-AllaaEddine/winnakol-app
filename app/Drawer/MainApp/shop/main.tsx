@@ -34,6 +34,7 @@ import { SheetManager } from 'react-native-actions-sheet';
 import ImageView from 'react-native-image-viewing-rtl';
 import { Rating } from 'react-native-ratings';
 import Swiper from 'react-native-swiper';
+import LogoSplash from '@/assets/images/logo_splash.svg';
 
 const ShopMain = () => {
   const searchParams = useLocalSearchParams();
@@ -170,24 +171,22 @@ const ShopMain = () => {
                   <View className="w-12 h-12 p-1 bg-sub rounded-full absolute top-10 right-4 z-20 shadow-sm">
                     {isFetchingShop ? (
                       <Skeleton classname="w-full h-full rounded-full" />
-                    ) : (
+                    ) : shop?.shopLogo.url ? (
                       <Image
                         source={{
-                          uri:
-                            shop?.shopLogo.url ??
-                            require('@/assets/images/no_image.png'),
+                          uri: shop?.shopLogo.url,
                         }}
                         className="w-full h-full bg-slate-200 dark:bg-dark-card rounded-full"
                       />
+                    ) : (
+                      <View className="w-full h-full bg-gray-300 flex justify-center items-center rounded-xl">
+                        <LogoSplash width="50" height="50" />
+                      </View>
                     )}
                   </View>
                   {isFetchingShop ? (
                     <Skeleton classname="w-full h-fullrounded-bl-2xl rounded-br-2xl" />
                   ) : (
-                    // <Image
-                    //   source={{ uri: (shop as Shop)?.shopPicture.url }}
-                    //   className="w-full h-full bg-slate-200 dark:bg-dark-card rounded-bl-2xl rounded-br-2xl"
-                    // />
                     <View className="w-full h-full justify-center items-center">
                       {(shop as Shop).shopPictures![0]?.url ? (
                         <Swiper
@@ -220,7 +219,13 @@ const ShopMain = () => {
                           })}
                         </Swiper>
                       ) : (
-                        <View className="w-full h-full bg-gray-300" />
+                        <View className="w-full h-full bg-gray-300 flex justify-center items-center">
+                          <LogoSplash
+                            width="150"
+                            height="150"
+                            // className="w-full h-full bg-slate-200 dark:bg-dark-card rounded-bl-2xl rounded-br-2xl"
+                          />
+                        </View>
                       )}
                     </View>
                   )}

@@ -9,6 +9,7 @@ import { router } from 'expo-router';
 import { useContext } from 'react';
 import { Image, Pressable, Text, View } from 'react-native';
 import Swiper from 'react-native-swiper';
+import LogoSplash from '@/assets/images/logo_splash.svg';
 
 const ShopCard = ({ shop }: { shop: Shop }) => {
   const context = useContext(languageContext);
@@ -53,18 +54,11 @@ const ShopCard = ({ shop }: { shop: Shop }) => {
           })}
         </Swiper>
       ) : (
-        <View className="w-full h-[120px] bg-gray-300 rounded-xl" />
+        <View className="w-full h-[120px] bg-gray-300 flex justify-center items-center rounded-xl">
+          <LogoSplash width="50" height="50" />
+        </View>
       )}
-      {/* <Image
-        source={
-          shop.shopPictures![0]?.url
-            ? {
-                uri: shop.shopPictures![0]?.url,
-              }
-            : require('@/assets/images/no_image.png')
-        }
-        className="w-full h-[120px] bg-slate-200 dark:bg-dark-card rounded-xl"
-      /> */}
+
       <View className="w-full h-auto rounded-lg mt-3">
         <View className="w-full h-auto flex flex-row justify-between items-center">
           <Text

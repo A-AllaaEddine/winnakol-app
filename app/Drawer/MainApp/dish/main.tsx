@@ -30,6 +30,7 @@ import ImageView from 'react-native-image-viewing-rtl';
 import { Rating } from 'react-native-ratings';
 import { t } from '../../../../../winnakol-next/server/trpc';
 import { MainColor } from '@/constants/colors';
+import LogoSplash from '@/assets/images/logo_splash.svg';
 
 const DishMain = () => {
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
@@ -148,16 +149,22 @@ const DishMain = () => {
                   <View className="absolute top-10 z-30 left-4">
                     <BackButton bg />
                   </View>
-                  <Pressable
-                    onPress={() => {
-                      setShowDishPic(true);
-                    }}
-                  >
-                    <Image
-                      source={{ uri: dish.imgUrl.url }}
-                      className="w-full h-full bg-slate-200 rounded-bl-2xl rounded-br-2xl"
-                    />
-                  </Pressable>
+                  {dish.imgUrl.url ? (
+                    <Pressable
+                      onPress={() => {
+                        setShowDishPic(true);
+                      }}
+                    >
+                      <Image
+                        source={{ uri: dish.imgUrl.url }}
+                        className="w-full h-full bg-slate-200 rounded-bl-2xl rounded-br-2xl"
+                      />
+                    </Pressable>
+                  ) : (
+                    <View className="w-full h-full bg-gray-300 flex justify-center items-center rounded-xl">
+                      <LogoSplash width="50" height="50" />
+                    </View>
+                  )}
                   <View
                     className="w-auto h-auto flex flex-row justify-end items-center  absolute bottom-5 right-4
                   rounded-full shadow-md dark:shadow-none bg-white  p-3"

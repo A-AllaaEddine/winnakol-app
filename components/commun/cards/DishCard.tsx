@@ -3,6 +3,7 @@ import { Dish, Shop } from '@/types/types';
 import { AntDesign } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { Image, Pressable, Text, View } from 'react-native';
+import LogoSplash from '@/assets/images/logo_splash.svg';
 
 const DishCard = ({ dish }: { dish: Dish }) => {
   return (
@@ -17,16 +18,18 @@ const DishCard = ({ dish }: { dish: Dish }) => {
       }}
       className="w-[170px] h-auto flex  justify-start items-center"
     >
-      <Image
-        source={
-          dish.imgUrl.url
-            ? {
-                uri: dish.imgUrl.url,
-              }
-            : require('@/assets/images/no_image.png')
-        }
-        className="w-full h-[120px] bg-slate-200 dark:bg-dark-card  rounded-xl"
-      />
+      {dish.imgUrl.url ? (
+        <Image
+          source={{
+            uri: dish.imgUrl.url,
+          }}
+          className="w-full h-[120px] bg-slate-200 dark:bg-dark-card  rounded-xl"
+        />
+      ) : (
+        <View className="w-full h-[120px] bg-gray-300 flex justify-center items-center rounded-xl">
+          <LogoSplash width="50" height="50" />
+        </View>
+      )}
       <View className="w-full h-auto  flex flex-col justify-start items-start mt-2">
         <Text
           numberOfLines={1}
