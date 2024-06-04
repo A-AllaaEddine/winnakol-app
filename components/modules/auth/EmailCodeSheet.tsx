@@ -104,6 +104,7 @@ const EmailCodeSheet = (props: SheetProps<'code-sheet'>) => {
         maxHeight: '90%',
         paddingHorizontal: 20,
       }}
+      closable={!isLoading}
       headerAlwaysVisible={true}
       gestureEnabled
       CustomHeaderComponent={

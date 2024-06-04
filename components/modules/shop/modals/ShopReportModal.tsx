@@ -10,8 +10,9 @@ import { ShopFr } from '@/locales/fr/shop';
 import { trpc } from '@/trpc/client';
 import { router } from 'expo-router';
 import { useContext, useState } from 'react';
-import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable, Text, TextInput, View } from 'react-native';
 import ActionSheet, {
+  ScrollView,
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
@@ -104,6 +105,7 @@ const ShopReportModal = (props: SheetProps<'shop-report-sheet'>) => {
         backgroundColor: colorScheme === 'light' ? 'white' : '#141414',
         minHeight: 500,
       }}
+      closable={!isLoading}
       headerAlwaysVisible={true}
       gestureEnabled
       CustomHeaderComponent={
@@ -114,11 +116,7 @@ const ShopReportModal = (props: SheetProps<'shop-report-sheet'>) => {
         </View>
       }
     >
-      <ScrollView
-        className="w-full h-auto  bg-white dark:bg-dark px-4  "
-        scrollEnabled={false}
-        automaticallyAdjustKeyboardInsets
-      >
+      <ScrollView className="w-full h-auto  bg-white dark:bg-dark px-4  ">
         {/* {Platform.OS === 'android' ? (
         <View className="w-full h-16 flex flex-row justify-start items-end">
           <View className="w-16   h-16 ">

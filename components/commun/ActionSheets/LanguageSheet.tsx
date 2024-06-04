@@ -1,4 +1,3 @@
-// import { FlashList, ListRenderItem } from '@shopify/flash-list';
 import { useColorScheme } from '@/context/ColorSchemeContext';
 import { languageContext } from '@/context/LanguageContext';
 import { PreferencesAr } from '@/locales/ar/preferences';

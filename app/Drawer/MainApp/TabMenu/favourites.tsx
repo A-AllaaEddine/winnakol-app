@@ -332,7 +332,10 @@ const Favourites = () => {
             ListEmptyComponent={
               isFetching ? (
                 // <SkeletonCard />
-                <View className="w-full h-36 flex flex-row flex-wrap justify-between items-center">
+                <View
+                  className="w-full h-36 flex flex-row flex-wrap justify-between items-center"
+                  style={{ gap: 10 }}
+                >
                   {Array.from({ length: 3 }, (_, i) => i).map((__, idx) => {
                     return <DishSkeletonCard key={idx} />;
                   })}

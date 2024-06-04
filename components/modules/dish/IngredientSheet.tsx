@@ -9,7 +9,7 @@ import ActionSheet, { SheetProps } from 'react-native-actions-sheet';
 import { ShopSettingsEn } from '@/locales/en/shopSettings';
 import { ShopSettingsFr } from '@/locales/fr/shopSettings';
 import { ShopSettingsAr } from '@/locales/ar/shopSettings';
-import { FlashList } from '@shopify/flash-list';
+import { FlashList } from 'react-native-actions-sheet/dist/src/views/FlashList';
 
 const IngredientSheet = (props: SheetProps<'ingredient-sheet'>) => {
   const [ingredients, setIngrendients] = useState(

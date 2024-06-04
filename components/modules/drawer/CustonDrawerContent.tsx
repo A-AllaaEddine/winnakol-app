@@ -1,4 +1,4 @@
-import Logo from '@/assets/images/logo.svg';
+import LogoText from '@/assets/images/logo_text.svg';
 import { languageContext } from '@/context/LanguageContext';
 import {
   DrawerContentScrollView,
@@ -22,16 +22,7 @@ const CustomDrawerContent = (props: any) => {
     <SafeAreaView style={{ flex: 1 }} className="bg-white dark:bg-dark">
       <View className="w-full h-14   flex flex-row justify-between items-center  px-3">
         <View className="w-auto h-14 flex flex-row justify-center items-center">
-          <Logo width="30" height="30" />
-          {/* <View className="flex flex-row mx-3">
-            <Text className="text-xl font-bold text-black dark:text-dark">
-              {i18n.t('win')}
-            </Text>
-            <Text className="text-main text-xl font-bold">
-              {' '}
-              {i18n.t('nakol')}
-            </Text>
-          </View> */}
+          <LogoText width="140" height="56" />
         </View>
       </View>
       <DrawerContentScrollView

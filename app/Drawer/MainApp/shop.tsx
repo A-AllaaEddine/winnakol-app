@@ -1,3 +1,4 @@
+import LogoSplash from '@/assets/images/logo_splash.svg';
 import DishCard from '@/components/commun/cards/DishCard';
 import DishSkeletonCard from '@/components/commun/cards/DishSkeletonCard';
 import BackButton from '@/components/commun/static/BackButton';
@@ -17,9 +18,8 @@ import {
   MaterialIcons,
 } from '@expo/vector-icons';
 import { useSession } from '@fullauth/react-native';
-import { FlashList } from '@shopify/flash-list';
 import { useLocalSearchParams } from 'expo-router';
-import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import {
   FlatList,
   I18nManager,
@@ -34,7 +34,6 @@ import { SheetManager } from 'react-native-actions-sheet';
 import ImageView from 'react-native-image-viewing-rtl';
 import { Rating } from 'react-native-ratings';
 import Swiper from 'react-native-swiper';
-import LogoSplash from '@/assets/images/logo_splash.svg';
 
 const ShopMain = () => {
   const searchParams = useLocalSearchParams();
@@ -200,10 +199,10 @@ const ShopMain = () => {
                           autoplay
                           autoplayTimeout={3}
                         >
-                          {(shop as Shop)?.shopPictures.map((item) => {
+                          {(shop as Shop)?.shopPictures.map((item, idx) => {
                             return (
                               <Pressable
-                                key={item.key}
+                                key={idx}
                                 onPress={() => {
                                   setSelectedImg(item.url);
                                   setShowShopPics(true);
@@ -491,8 +490,8 @@ const ShopMain = () => {
               <View className="w-full px-4 h-auto flex flex-row flex-wrap justify-between items-center2">
                 {Array.from({ length: 6 }, (_, i) => i).map((__, idx) => {
                   return (
-                    <View className="my-2">
-                      <DishSkeletonCard key={idx} />
+                    <View className="my-2" key={idx}>
+                      <DishSkeletonCard />
                     </View>
                   );
                 })}

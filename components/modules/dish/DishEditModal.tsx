@@ -5,7 +5,6 @@ import { useContext, useState } from 'react';
 import { languageContext } from '@/context/LanguageContext';
 import {
   Pressable,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -29,6 +28,7 @@ import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 import { authHeaders } from '@fullauth/react-native';
 import * as ImagePicker from 'expo-image-picker';
 import ActionSheet, {
+  ScrollView,
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
@@ -190,6 +190,7 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
         left: 0,
         right: 0,
       }}
+      closable={!isLoading}
       headerAlwaysVisible={true}
       gestureEnabled
       snapPoints={[85]}
@@ -414,7 +415,7 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
           <View className="">
             <Pressable
               className="w-auto h-12 flex justify-center items-center  text-lg
-            font-bold bg-black dark:bg-dark-btn rounded-lg"
+            font-bold bg-black dark:bg-dark-btn rounded-full"
               onPress={handleSubmit}
               disabled={isLoading}
             >

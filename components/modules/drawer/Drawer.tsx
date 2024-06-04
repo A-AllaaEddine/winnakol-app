@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { languageContext } from '@/context/LanguageContext';
 import { useColorScheme } from '@/context/ColorSchemeContext';
 import { MainColor } from '@/constants/colors';
+import { Text } from 'react-native';
 
 const CustomDrawer = () => {
   const context = useContext(languageContext);
@@ -39,22 +40,36 @@ const CustomDrawer = () => {
         drawerContent={CustomDrawerContent}
       >
         <Drawer.Screen
-          name="MainApp" // This is the name of the page and must match the url from root
+          name="MainApp"
           options={{
-            drawerLabel: i18n.t('homeTxt'),
+            drawerLabel: ({ color, focused }) => (
+              <Text className="text-black dark:text-dark">
+                {i18n.t('homeTxt')}
+              </Text>
+            ),
             title: 'overview',
-            // headerLeft: () => <Entypo name="menu" size={36} color="black" />,
-          }}
-        />
-        {/* <Drawer.Screen
-          name="about" // This is the name of the page and must match the url from root
-          options={{
-            drawerLabel: i18n.t('aboutTxt'),
-            title: 'About',
-            headerLeft: () => <Entypo name="menu" size={36} color="black" />,
+            drawerLabelStyle: {
+              color: colorScheme === 'light' ? 'white' : '#EDEBEB',
+              backgroundColor: 'green',
+            },
           }}
         />
         <Drawer.Screen
+          name="about"
+          options={{
+            drawerLabel: ({ color, focused }) => (
+              <Text className="text-black dark:text-dark">
+                {i18n.t('aboutTxt')}
+              </Text>
+            ),
+            title: 'About',
+            drawerLabelStyle: {
+              color: colorScheme === 'light' ? 'white' : '#EDEBEB',
+              backgroundColor: 'green',
+            },
+          }}
+        />
+        {/* <Drawer.Screen
           name="terms" // This is the name of the page and must match the url from root
           options={{
             drawerLabel: i18n.t('termsTxt'),

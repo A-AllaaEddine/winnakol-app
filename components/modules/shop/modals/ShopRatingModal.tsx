@@ -10,8 +10,9 @@ import { ShopFr } from '@/locales/fr/shop';
 // import { UsernameFr } from '@/locales/fr/username';
 import { trpc } from '@/trpc/client';
 import { useContext, useState } from 'react';
-import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable, Text, TextInput, View } from 'react-native';
 import ActionSheet, {
+  ScrollView,
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
@@ -110,6 +111,7 @@ const ShopRatingModal = (props: SheetProps<'shop-rating-sheet'>) => {
         backgroundColor: colorScheme === 'light' ? 'white' : '#141414',
         minHeight: 500,
       }}
+      closable={!isLoading}
       headerAlwaysVisible={true}
       gestureEnabled
       CustomHeaderComponent={
@@ -120,10 +122,7 @@ const ShopRatingModal = (props: SheetProps<'shop-rating-sheet'>) => {
         </View>
       }
     >
-      <ScrollView
-        className="w-full h-auto  bg-white dark:bg-dark px-6  "
-        scrollEnabled={false}
-      >
+      <ScrollView className="w-full h-auto  bg-white dark:bg-dark px-6  ">
         {/* <View className="w-full h-12  flex flex-row justify-center items-center px-3">
           <View className="w-36 h-2 bg-slate-300 rounded-full" />
         </View> */}

@@ -148,17 +148,7 @@ const Home = () => {
                       navigation.dispatch(DrawerActions.openDrawer())
                     }
                   >
-                    {/* <Entypo name="menu" size={36} color="black" /> */}
                     <LogoText width="140" height="56" />
-                    {/* <View className="flex flex-row mx-3">
-                      <Text className="text-xl font-bold text-black dark:text-dark">
-                        {i18n.t('win')}
-                      </Text>
-                      <Text className="text-main text-xl font-bold">
-                        {' '}
-                        {i18n.t('nakol')}
-                      </Text>
-                    </View> */}
                   </Pressable>
                 </View>
                 <View className="mt-5">

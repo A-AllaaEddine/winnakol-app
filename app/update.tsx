@@ -9,7 +9,7 @@ import { useSession } from '@fullauth/react-native';
 import * as Application from 'expo-application';
 import Constants from 'expo-constants';
 import * as Linking from 'expo-linking';
-import { router, SplashScreen } from 'expo-router';
+import { router } from 'expo-router';
 import { useContext, useEffect, useState } from 'react';
 import { Platform, Pressable, SafeAreaView, Text, View } from 'react-native';
 import semver from 'semver';

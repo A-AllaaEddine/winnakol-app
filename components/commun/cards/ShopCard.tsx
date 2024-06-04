@@ -21,7 +21,7 @@ const ShopCard = ({ shop }: { shop: Shop }) => {
     <Pressable
       onPress={() => {
         router.push({
-          pathname: '/Drawer/MainApp/shop/main',
+          pathname: '/Drawer/MainApp/shop',
           params: {
             shop: JSON.stringify(shop),
           },

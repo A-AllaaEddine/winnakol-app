@@ -1,19 +1,12 @@
 import { useColorScheme } from '@/context/ColorSchemeContext';
 import { languageContext } from '@/context/LanguageContext';
-import { categoriesAr } from '@/locales/ar/categories';
 import { ResetAr } from '@/locales/ar/reset';
-import { ShopSettingsAr } from '@/locales/ar/shopSettings';
-import { categoriesEn } from '@/locales/en/categories';
 import { ResetEn } from '@/locales/en/reset';
-import { ShopSettingsEn } from '@/locales/en/shopSettings';
-import { categoriesFr } from '@/locales/fr/categories';
 import { ResetFr } from '@/locales/fr/reset';
-import { ShopSettingsFr } from '@/locales/fr/shopSettings';
 import { trpc } from '@/trpc/client';
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { FlashList } from '@shopify/flash-list';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import ActionSheet, {
@@ -106,6 +99,7 @@ const ResetSheet = (props: SheetProps<'reset-sheet'>) => {
         maxHeight: '90%',
         paddingHorizontal: 20,
       }}
+      closable={!isLoading}
       headerAlwaysVisible={true}
       gestureEnabled
       CustomHeaderComponent={

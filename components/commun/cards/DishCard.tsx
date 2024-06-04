@@ -10,7 +10,7 @@ const DishCard = ({ dish }: { dish: Dish }) => {
     <Pressable
       onPress={() => {
         router.push({
-          pathname: '/Drawer/MainApp/dish/main',
+          pathname: '/Drawer/MainApp/dish',
           params: {
             dish: JSON.stringify(dish),
           },

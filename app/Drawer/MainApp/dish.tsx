@@ -1,7 +1,9 @@
+import LogoSplash from '@/assets/images/logo_splash.svg';
 import ReviewCard from '@/components/commun/cards/ReviewCard';
 import ReviewSkeletonCard from '@/components/commun/cards/ReviewSkeletonCard';
 import BackButton from '@/components/commun/static/BackButton';
 import Skeleton from '@/components/commun/static/Skeleton';
+import { MainColor } from '@/constants/colors';
 import { useColorScheme } from '@/context/ColorSchemeContext';
 import { languageContext } from '@/context/LanguageContext';
 import { DishAr } from '@/locales/ar/dish';
@@ -28,9 +30,6 @@ import {
 import { SheetManager } from 'react-native-actions-sheet';
 import ImageView from 'react-native-image-viewing-rtl';
 import { Rating } from 'react-native-ratings';
-import { t } from '../../../../../winnakol-next/server/trpc';
-import { MainColor } from '@/constants/colors';
-import LogoSplash from '@/assets/images/logo_splash.svg';
 
 const DishMain = () => {
   const [isEnabled, setIsEnabled] = useState<boolean>(false);

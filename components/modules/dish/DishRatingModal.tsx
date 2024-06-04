@@ -10,8 +10,9 @@ import { ShopFr } from '@/locales/fr/shop';
 // import { UsernameFr } from '@/locales/fr/username';
 import { trpc } from '@/trpc/client';
 import { useContext, useState } from 'react';
-import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable, Text, TextInput, View } from 'react-native';
 import ActionSheet, {
+  ScrollView,
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
@@ -109,6 +110,7 @@ const DishRatingModal = (props: SheetProps<'dish-rating-sheet'>) => {
         backgroundColor: colorScheme === 'light' ? 'white' : '#141414',
         minHeight: 500,
       }}
+      closable={!isLoading}
       headerAlwaysVisible={true}
       gestureEnabled
       CustomHeaderComponent={
@@ -119,10 +121,7 @@ const DishRatingModal = (props: SheetProps<'dish-rating-sheet'>) => {
         </View>
       }
     >
-      <ScrollView
-        className="w-full h-auto  bg-white dark:bg-dark px-6  "
-        scrollEnabled={false}
-      >
+      <ScrollView className="w-full h-auto  bg-white dark:bg-dark px-6  ">
         <View className="w-full gap-y-4 rounded-md">
           <View className="w-full h-auto items-start">
             <Rating

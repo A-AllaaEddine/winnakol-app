@@ -25,7 +25,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Dropdown } from 'react-native-element-dropdown';
 
 const Shop = () => {
   const shopsCxt = useContext(shopsContext);

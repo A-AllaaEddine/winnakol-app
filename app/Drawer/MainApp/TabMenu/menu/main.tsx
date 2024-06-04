@@ -1,6 +1,7 @@
 import PictureComponent from '@/components/commun/static/PictureComponent';
 import { useColorScheme } from '@/context/ColorSchemeContext';
 import { languageContext } from '@/context/LanguageContext';
+import { shopsContext } from '@/context/shopsContext';
 import { MainMenuAr } from '@/locales/ar/mainmenu';
 import { MainMenuEn } from '@/locales/en/mainmenu';
 import { MainMenuFr } from '@/locales/fr/mainmenu';
@@ -31,6 +32,7 @@ const Main = () => {
   const { colorScheme } = useColorScheme();
 
   const context = useContext(languageContext);
+  const shopsCxt = useContext(shopsContext);
 
   const { i18n } = context?.translation({
     translations: { en: MainMenuEn, fr: MainMenuFr, ar: MainMenuAr },
@@ -110,7 +112,7 @@ const Main = () => {
           )}
         </View>
         <View className="w-full h-full px-2 py-3 gap-y-3 ">
-          {session?.user.isShopOwner ? (
+          {session?.user.isShopOwner && shopsCxt?.currentShop ? (
             <Pressable
               // className="w-full h-20 flex flex-row justify-between items-center
               //    rounded-lg py-2 px-4 bg-sub"

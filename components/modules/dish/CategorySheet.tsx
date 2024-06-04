@@ -6,13 +6,13 @@ import { categoriesEn } from '@/locales/en/categories';
 import { ShopSettingsEn } from '@/locales/en/shopSettings';
 import { categoriesFr } from '@/locales/fr/categories';
 import { ShopSettingsFr } from '@/locales/fr/shopSettings';
-import { FlashList } from '@shopify/flash-list';
 import { useContext, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import ActionSheet, {
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
+import { FlashList } from 'react-native-actions-sheet/dist/src/views/FlashList';
 
 const CategorySheet = (props: SheetProps<'category-sheet'>) => {
   const [selectedCategory, setSelectedCategory] = useState(

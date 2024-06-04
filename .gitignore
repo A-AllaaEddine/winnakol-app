@@ -28,6 +28,9 @@ yarn-error.*
 .DS_Store
 *.pem
 
+# apk files
+.apk
+
 # local env files
 .env*.local
 

@@ -5,6 +5,7 @@ import { accountAr } from '@/locales/ar/account';
 import { accountEn } from '@/locales/en/account';
 import { accountFr } from '@/locales/fr/account';
 import {
+  AntDesign,
   FontAwesome,
   MaterialCommunityIcons,
   MaterialIcons,
@@ -12,6 +13,7 @@ import {
 import { router } from 'expo-router';
 import { useContext } from 'react';
 import { I18nManager, Pressable, SafeAreaView, Text, View } from 'react-native';
+import { SheetManager } from 'react-native-actions-sheet';
 
 const Main = () => {
   const context = useContext(languageContext);
@@ -120,6 +122,40 @@ const Main = () => {
             </View>
             <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
               {i18n.t('PorfilePicture')}
+            </Text>
+          </View>
+
+          {I18nManager.isRTL ? (
+            <MaterialIcons
+              name="keyboard-arrow-left"
+              size={24}
+              color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
+            />
+          ) : (
+            <MaterialIcons
+              name="keyboard-arrow-right"
+              size={24}
+              color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
+            />
+          )}
+        </Pressable>
+        <Pressable
+          className="w-full h-20 flex flex-row justify-between items-center
+          rounded-full py-2 px-4 bg-white dark:bg-dark-card shadow-md"
+          onPress={() => {
+            SheetManager.show('account-delete-sheet');
+          }}
+        >
+          <View className="h-full flex flex-row justify-start items-center">
+            <View className="w-8 h-8 flex justify-center items-center  rounded-lg">
+              <AntDesign
+                name="delete"
+                size={20}
+                color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
+              />
+            </View>
+            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+              {i18n.t('deleteAccount')}
             </Text>
           </View>
 

@@ -1,4 +1,3 @@
-'use client';
 import { authHeaders } from '@fullauth/react-native';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { httpBatchLink, loggerLink } from '@trpc/client';

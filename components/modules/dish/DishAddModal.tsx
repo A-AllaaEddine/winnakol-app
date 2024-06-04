@@ -5,7 +5,6 @@ import { useContext, useState } from 'react';
 import { languageContext } from '@/context/LanguageContext';
 import {
   Pressable,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -28,6 +27,7 @@ import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 import { authHeaders } from '@fullauth/react-native';
 import * as ImagePicker from 'expo-image-picker';
 import ActionSheet, {
+  ScrollView,
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
@@ -184,6 +184,7 @@ const DishAddModal = (props: SheetProps<'dish-add-sheet'>) => {
         left: 0,
         right: 0,
       }}
+      closable={!isLoading}
       headerAlwaysVisible={true}
       gestureEnabled
       snapPoints={[85]}
