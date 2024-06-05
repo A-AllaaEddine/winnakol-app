@@ -5,7 +5,7 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 import { useContext } from 'react';
-import { SafeAreaView, View } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
 
 const CustomDrawerContent = (props: any) => {
   const context = useContext(languageContext);
@@ -35,8 +35,8 @@ const CustomDrawerContent = (props: any) => {
       >
         <DrawerItemList {...props} />
       </DrawerContentScrollView>
-      {/* <View className="p-10 ">
-        <View className="w-full h-14 flex flex-row justify-start items-center gap-x-4">
+      <View className="p-10 ">
+        {/* <View className="w-full h-14 flex flex-row justify-start items-center gap-x-4">
           <Pressable
             onPress={() =>
               Linking.openURL('https://www.instagram.com/benyankomdz/')
@@ -62,11 +62,11 @@ const CustomDrawerContent = (props: any) => {
           >
             <AntDesign name="linkedin-square" size={30} color="black" />
           </Pressable>
-        </View>
+        </View> */}
         <Text className="w-full h-10  font-poppins text-xl ">
-          {i18n.t('copyrightTxt')}
+          © 2024 Winakol
         </Text>
-      </View> */}
+      </View>
     </SafeAreaView>
   );
 };

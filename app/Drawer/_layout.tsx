@@ -75,6 +75,24 @@ const DrawerLayout = () => {
             },
           }}
         />
+        <Drawer.Screen
+          name="terms"
+          options={{
+            drawerLabel: ({ color, focused }) => (
+              <Text
+                className={`text-black dark:text-dark ${
+                  focused ? 'font-bold' : 'font-normal'
+                }`}
+              >
+                {i18n.t('termsTxt')}
+              </Text>
+            ),
+            title: 'Terms',
+            drawerLabelStyle: {
+              color: colorScheme === 'light' ? 'white' : '#EDEBEB',
+            },
+          }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );

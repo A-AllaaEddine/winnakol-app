@@ -40,6 +40,13 @@ const Main = () => {
         <Pressable
           className="w-full h-20 flex flex-row justify-between items-center
           rounded-full py-2 px-4 bg-white dark:bg-dark-card shadow-md"
+          style={{
+            elevation: 5,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 0 },
+            shadowOpacity: 0.1,
+            shadowRadius: 10,
+          }}
           onPress={() => {
             router.push('/Drawer/MainApp/TabMenu/menu/account/details');
           }}
@@ -74,6 +81,13 @@ const Main = () => {
         <Pressable
           className="w-full h-20 flex flex-row justify-between items-center
          rounded-full py-2 px-4 bg-white dark:bg-dark-card shadow-md"
+          style={{
+            elevation: 5,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 0 },
+            shadowOpacity: 0.1,
+            shadowRadius: 10,
+          }}
           onPress={() => {
             router.push('/Drawer/MainApp/TabMenu/menu/account/password');
           }}
@@ -108,6 +122,13 @@ const Main = () => {
         <Pressable
           className="w-full h-20 flex flex-row justify-between items-center
           rounded-full py-2 px-4 bg-white dark:bg-dark-card shadow-md"
+          style={{
+            elevation: 5,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 0 },
+            shadowOpacity: 0.1,
+            shadowRadius: 10,
+          }}
           onPress={() => {
             router.push('/Drawer/MainApp/TabMenu/menu/account/picture');
           }}
@@ -142,6 +163,13 @@ const Main = () => {
         <Pressable
           className="w-full h-20 flex flex-row justify-between items-center
           rounded-full py-2 px-4 bg-white dark:bg-dark-card shadow-md"
+          style={{
+            elevation: 5,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 0 },
+            shadowOpacity: 0.1,
+            shadowRadius: 10,
+          }}
           onPress={() => {
             SheetManager.show('account-delete-sheet');
           }}

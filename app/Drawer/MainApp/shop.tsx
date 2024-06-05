@@ -169,7 +169,7 @@ const ShopMain = () => {
                   </View>
                   <View className="w-12 h-12 p-1 bg-sub rounded-full absolute top-10 right-4 z-20 shadow-sm">
                     {isFetchingShop ? (
-                      <Skeleton classname="w-full h-full rounded-full" />
+                      <Skeleton classname="w-full h-full rounded-full bg-slate-200" />
                     ) : shop?.shopLogo.url ? (
                       <Image
                         source={{

@@ -7,6 +7,7 @@ import {
 } from 'react';
 import { Appearance } from 'react-native';
 import { useColorScheme as useColor } from 'nativewind';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 // const wait = async (ms: number) =>
 //   new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -194,6 +195,22 @@ interface ColorSchemeProviderProps {
 export const ColorSchemeProvider = ({ children }: ColorSchemeProviderProps) => {
   const [currentColorScheme, setCurrentColorScheme] =
     useState<ColorScheme>(defaultValue);
+
+  useEffect(() => {
+    const getTheme = async () => {
+      const theme = await AsyncStorage.getItem('theme');
+      if (theme) {
+        setCurrentColorScheme((prev) => {
+          return {
+            statusBarStyle: theme as 'light' | 'dark',
+            colorScheme: theme === 'light' ? 'dark' : 'light',
+          };
+        });
+      }
+    };
+
+    getTheme();
+  }, []);
 
   const { colorScheme, statusBarStyle } = currentColorScheme;
 

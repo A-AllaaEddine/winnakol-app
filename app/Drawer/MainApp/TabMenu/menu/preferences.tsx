@@ -71,8 +71,9 @@ const Preferences = () => {
 
           {colorScheme === 'dark' ? (
             <Pressable
-              onPress={() => {
+              onPress={async () => {
                 setColorScheme('light');
+                await AsyncStorage.setItem('theme', 'light');
               }}
             >
               <MaterialCommunityIcons
@@ -83,8 +84,9 @@ const Preferences = () => {
             </Pressable>
           ) : (
             <Pressable
-              onPress={() => {
+              onPress={async () => {
                 setColorScheme('dark');
+                await AsyncStorage.setItem('theme', 'dark');
               }}
             >
               <MaterialCommunityIcons
