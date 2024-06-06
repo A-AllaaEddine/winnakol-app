@@ -152,7 +152,7 @@ const Home = () => {
                   </Pressable>
                 </View>
                 <View className="mt-5">
-                  <Text className="font-bold text-2xl text-black dark:text-dark">
+                  <Text className="font-bold font-oswald text-2xl text-black dark:text-dark">
                     {i18n.t('find')}
                     <Text className="text-main"> {i18n.t('food')}</Text>
                     {'\n'}
@@ -168,7 +168,7 @@ const Home = () => {
                       onChangeText={onChangeText}
                       value={text}
                       inputMode="text"
-                      className="w-full h-14 px-2 text-black dark:text-white"
+                      className="w-full h-14 px-2 font-nunito text-black dark:text-white"
                       placeholderTextColor={'#9F9F9F'}
                       placeholder={i18n.t('lookingFor')}
                     />
@@ -186,7 +186,7 @@ const Home = () => {
                 </View>
                 <View className="w-full h-auto  gap-y-3">
                   <View className="w-full h-auto flex flex-row justify-between items-center">
-                    <Text className="text-xl font-bold text-black dark:text-dark">
+                    <Text className="text-xl font-bold font-oswald text-black dark:text-dark">
                       {i18n.t('filter')}
                     </Text>
                     <Pressable
@@ -197,7 +197,7 @@ const Home = () => {
                         });
                       }}
                     >
-                      <Text className="text-sub text-sm">
+                      <Text className="text-sub text-sm font-nunito">
                         {i18n.t('clear')}
                       </Text>
                     </Pressable>
@@ -257,7 +257,7 @@ const Home = () => {
                               selectedFilters.includes(item.value)
                                 ? 'text-white'
                                 : 'text-black dark:text-dark'
-                            } font-semibold`}
+                            } font-nunito-semi`}
                           >
                             {item.label}
                           </Text>
@@ -311,7 +311,7 @@ const Home = () => {
                 </View>
               ) : (
                 <View className="w-full h-36 flex justify-center items-center">
-                  <Text className="text-xl text-black dark:text-white font-poppins-bold">
+                  <Text className="text-xl text-black dark:text-white font-bold font-nunito">
                     {i18n.t('noRestaurantTxt')}
                   </Text>
                 </View>

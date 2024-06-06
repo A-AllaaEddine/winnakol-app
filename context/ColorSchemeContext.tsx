@@ -172,7 +172,7 @@ export type ColorSchemeName = 'light' | 'dark';
 
 interface ColorScheme {
   statusBarStyle: ColorSchemeName;
-  colorScheme: ColorSchemeName;
+  colorScheme?: ColorSchemeName;
 }
 
 const defaultValue: ColorScheme = {
@@ -190,11 +190,20 @@ export const ColorSchemeContext = createContext<ColorSchemeContext | null>(
 
 interface ColorSchemeProviderProps {
   children: ReactNode;
+  currentTheme: 'light' | 'dark';
 }
 
-export const ColorSchemeProvider = ({ children }: ColorSchemeProviderProps) => {
-  const [currentColorScheme, setCurrentColorScheme] =
-    useState<ColorScheme>(defaultValue);
+export const ColorSchemeProvider = ({
+  children,
+  currentTheme,
+}: ColorSchemeProviderProps) => {
+  const [currentColorScheme, setCurrentColorScheme] = useState<ColorScheme>({
+    colorScheme: currentTheme ?? defaultValue.colorScheme,
+    statusBarStyle:
+      currentTheme ?? defaultValue.statusBarStyle === 'light'
+        ? 'dark'
+        : 'light',
+  });
 
   useEffect(() => {
     const getTheme = async () => {

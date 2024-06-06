@@ -63,18 +63,18 @@ const ShopCard = ({ shop }: { shop: Shop }) => {
         <View className="w-full h-auto flex flex-row justify-between items-center">
           <Text
             numberOfLines={1}
-            className="w-4/6 text-left text-black dark:text-dark truncate text-lg font-bold"
+            className="w-4/6 text-left text-black dark:text-dark truncate text-lg font-bold font-oswald"
           >
             {shop.name}
           </Text>
           <View className="w-auto h-full flex flex-row justify-center items-center gap-x-1">
-            <Text className="w-auto max-w-[70px] text-black dark:text-dark text-sm truncate">
+            <Text className="w-auto max-w-[70px] text-black dark:text-dark text-sm truncate font-nunito">
               {shop.averageRating.toFixed(1)}
             </Text>
             <AntDesign name="star" size={15} color={MainColor} />
           </View>
         </View>
-        <Text className="text-xs text-black dark:text-dark">
+        <Text className="text-xs text-black dark:text-dark font-nunito">
           {i18n.t('WorkingHours')}: {shop.workingHours[0]}-
           {shop.workingHours[1]}
         </Text>

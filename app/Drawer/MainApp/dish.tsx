@@ -197,7 +197,7 @@ const DishMain = () => {
                   {isFetchingDish ? (
                     <Skeleton classname="w-48 h-6" />
                   ) : (
-                    <Text className="text-2xl font-bold text-black dark:text-dark">
+                    <Text className="text-2xl font-bold font-oswald text-black dark:text-dark">
                       {dish.name}
                     </Text>
                   )}
@@ -233,10 +233,10 @@ const DishMain = () => {
                         tintColor={colorScheme === 'dark' ? '#141414' : '#fff'}
                         readonly
                       />
-                      <Text className="text-sm text-black dark:text-dark">
+                      <Text className="text-sm text-black dark:text-dark font-nunito">
                         {dish.averageRating.toFixed(1)}
                       </Text>
-                      <Text className="text-xs text-black dark:text-dark">
+                      <Text className="text-xs text-black dark:text-dark font-nunito">
                         ({formatNumber(dish.totalReviews)} reviews)
                       </Text>
                     </View>
@@ -245,13 +245,13 @@ const DishMain = () => {
                 {isFetchingDish ? (
                   <Skeleton classname="w-full h-16 mt-3" />
                 ) : (
-                  <Text className="max-h-[80px] text-left truncate text-black dark:text-dark whitespace-break-spaces text-sm mt-3">
+                  <Text className="max-h-[80px] text-left truncate font-nunito text-black dark:text-dark whitespace-break-spaces text-sm mt-3">
                     {dish.description}
                   </Text>
                 )}
               </View>
               <View className="mt-5 px-4">
-                <Text className="text-lg font-bold text-black dark:text-dark">
+                <Text className="text-lg text-black dark:text-dark font-oswald font-bold">
                   {i18n.t('ingredientsTxt')}
                 </Text>
                 {isFetchingDish ? (
@@ -293,7 +293,7 @@ const DishMain = () => {
                     }}
                     ListEmptyComponent={
                       <View className="w-full h-auto flex justify-center items-center">
-                        <Text className="text-sm text-left font-poppins-bold text-black dark:text-dark">
+                        <Text className="text-sm text-left font-nunito text-black dark:text-dark">
                           {i18n.t('noIngredientsTxt')}
                         </Text>
                       </View>
@@ -302,7 +302,7 @@ const DishMain = () => {
                 )}
               </View>
               <View className="mt-5 px-4">
-                <Text className="text-lg font-bold text-black dark:text-dark">
+                <Text className="text-lg font-bold text-black font-oswald dark:text-dark">
                   {i18n.t('reviewsTxt')}
                 </Text>
               </View>
@@ -339,7 +339,7 @@ const DishMain = () => {
               </>
             ) : (
               <View className="w-full h-36 flex justify-center items-center">
-                <Text className="text-xl text-black dark:text-dark font-poppins-bold">
+                <Text className="text-xl text-black dark:text-dark font-nunito-semi">
                   {i18n.t('noResultsText')}
                 </Text>
               </View>

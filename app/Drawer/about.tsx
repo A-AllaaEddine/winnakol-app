@@ -55,39 +55,39 @@ const About = () => {
         </View> */}
 
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold font-oswald text-black dark:text-dark">
             {i18n.t('aboutTitle')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito-semi">
             {i18n.t('aboutDescTxt')}
           </Text>
         </View>
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold text-black dark:text-dark font-nunito-semi">
             {i18n.t('featuresTitle')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito">
             - <Text>{i18n.t('shopListingTitle')}</Text>
             {i18n.t('shopListingDesc')}
           </Text>
-          <Text className="text-lg mt-5 text-black dark:text-dark">
+          <Text className="text-lg mt-5 text-black dark:text-dark font-nunito">
             - <Text>{i18n.t('userReviewTitle')}</Text>
             {i18n.t('userReviewDesc')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito">
             - <Text>{i18n.t('favouritesTitle')}</Text>
             {i18n.t('favouritesDesc')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito">
             - <Text>{i18n.t('restaurantListingTitle')}</Text>
             {i18n.t('shopManagementDesc')}
           </Text>
         </View>
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold text-black dark:text-dark font-nunito-semi">
             {i18n.t('ourMissionTitle')}
           </Text>
-          <Text className="text-lg mt-5 text-black dark:text-dark">
+          <Text className="text-lg mt-5 text-black dark:text-dark font-nunito">
             {i18n.t('ourMissionDesc')}
           </Text>
         </View>

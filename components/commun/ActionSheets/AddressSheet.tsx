@@ -75,7 +75,7 @@ function AddressSheet(props: SheetProps<'address-sheet'>) {
               bg-white dark:bg-dark"
               key={idx}
             >
-              <Text className="text-black dark:text-dark text-lg">
+              <Text className="text-black dark:text-dark text-lg font-nunito-semi">
                 {option}
               </Text>
             </Pressable>

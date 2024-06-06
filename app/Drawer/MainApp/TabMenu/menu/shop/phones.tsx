@@ -91,13 +91,13 @@ const Phones = () => {
           <BackButton />
         </View>
         <View className="w-full h-16 mx-2 flex flex-row justify-start items-center">
-          <Text className=" font-poppins-bold text-black dark:text-dark  text-2xl tracking-wider">
+          <Text className=" font-bold font-oswald text-black dark:text-dark  text-2xl tracking-wider">
             {i18n.t('phonesTitle')}
           </Text>
         </View>
       </View>
       <ScrollView
-        className="h-full w-full font-poppins flex flex-col pb-40 px-6"
+        className="h-full w-full flex flex-col pb-40 px-6"
         automaticallyAdjustKeyboardInsets
         contentContainerStyle={{
           justifyContent: 'flex-start',
@@ -126,7 +126,7 @@ const Phones = () => {
                     }}
                     value={phone}
                     defaultValue=""
-                    className="w-5/6 h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-full px-2 mt-3"
+                    className="w-5/6 h-14 font-nunito text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-full px-2 mt-3"
                     placeholder="Phone Number"
                   />
                   {phones?.length! > 1 ? (
@@ -158,7 +158,7 @@ const Phones = () => {
                   });
                 }}
               >
-                <Text className="w-auto  text-black dark:text-dark font-poppins  text-sm">
+                <Text className="w-auto  text-black dark:text-dark font-nunito  text-sm">
                   {i18n.t('addPhoneLabel')}
                 </Text>
               </Pressable>
@@ -170,11 +170,11 @@ const Phones = () => {
             disabled={isLoading}
           >
             {isLoading ? (
-              <Text className="text-lg  font-poppins-bold text-white">
+              <Text className="text-lg  font-nunito-semi text-white">
                 {i18n.t('savingTxt')}
               </Text>
             ) : (
-              <Text className="text-lg  font-poppins-bold text-white">
+              <Text className="text-lg  font-nunito-semi text-white">
                 {i18n.t('saveBtn')}
               </Text>
             )}

@@ -70,7 +70,7 @@ function LanguageSheet(props: SheetProps<'language-sheet'>) {
       gestureEnabled
       CustomHeaderComponent={
         <View className="w-full h-16 flex flex-row justify-center items-center">
-          <Text className="text-lg text-black dark:text-dark font-bold">
+          <Text className="text-lg text-black dark:text-dark font-bold font-oswald">
             {i18n.t('selectLanguageTxt')}
           </Text>
         </View>
@@ -101,9 +101,9 @@ function LanguageSheet(props: SheetProps<'language-sheet'>) {
                 <Text
                   className={`${
                     selectedLanguage === item.value
-                      ? 'text-white font-bold'
+                      ? 'text-white'
                       : 'text-black dark:text-dark'
-                  }  text-lg `}
+                  }  text-lg font-nunito-semi`}
                 >
                   {item.label}
                 </Text>

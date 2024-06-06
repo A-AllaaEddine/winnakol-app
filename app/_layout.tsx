@@ -8,6 +8,12 @@ import { router } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
 import 'react-native-gesture-handler';
+import { Oswald_700Bold } from '@expo-google-fonts/oswald';
+import {
+  NunitoSans_400Regular,
+  NunitoSans_600SemiBold,
+} from '@expo-google-fonts/nunito-sans';
+import { Appearance } from 'react-native';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -24,12 +30,17 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [languageFetched, setLanguageFetched] = useState<boolean>(false);
+  const [themeFetched, setThemeFetched] = useState<boolean>(false);
 
   const [lang, setLang] = useState<string | null>(null);
+  const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>('light');
 
   const [loaded, error] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...FontAwesome.font,
+    Oswald_700Bold,
+    NunitoSans_400Regular,
+    NunitoSans_600SemiBold,
   });
 
   useEffect(() => {
@@ -52,6 +63,21 @@ export default function RootLayout() {
       }
     }
 
+    const getTheme = async () => {
+      try {
+        const theme = await AsyncStorage.getItem('theme');
+        if (theme) {
+          Appearance.setColorScheme(theme as 'light' | 'dark');
+          setCurrentTheme(theme as 'light' | 'dark');
+        }
+        setThemeFetched(true);
+      } catch (error: any) {
+        setThemeFetched(true);
+        console.log('error: ', error);
+      }
+    };
+
+    getTheme();
     getLangs();
   }, []);
 
@@ -61,18 +87,18 @@ export default function RootLayout() {
   }, [error]);
 
   useEffect(() => {
-    if (loaded && languageFetched) {
+    if (loaded && languageFetched && themeFetched) {
       // SplashScreen.hideAsync();
       router.push('/maintenance');
     }
   }, [loaded]);
 
-  if (!loaded || !languageFetched) {
+  if (!loaded || !languageFetched || !themeFetched) {
     return null;
   }
 
   return (
-    <ColorSchemeProvider>
+    <ColorSchemeProvider currentTheme={currentTheme}>
       <MainApp lang={lang} />
     </ColorSchemeProvider>
   );

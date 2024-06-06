@@ -116,7 +116,7 @@ const ShopRatingModal = (props: SheetProps<'shop-rating-sheet'>) => {
       gestureEnabled
       CustomHeaderComponent={
         <View className="w-full h-16 flex flex-row justify-center items-center">
-          <Text className="text-lg text-black dark:text-dark font-bold">
+          <Text className="text-lg text-black dark:text-dark font-bold font-oswald">
             {i18n.t('leaveReviewTitle')}
           </Text>
         </View>
@@ -151,13 +151,13 @@ const ShopRatingModal = (props: SheetProps<'shop-rating-sheet'>) => {
             numberOfLines={4}
             multiline
             textAlignVertical="top"
-            className="w-full h-32 text-black dark:text-dark  bg-slate-200 dark:bg-dark-card rounded-lg px-2"
+            className="w-full h-32 text-black dark:text-dark font-nunito bg-slate-200 dark:bg-dark-card rounded-lg px-2"
             placeholder={i18n.t('writeReviewPlaceholder')}
             placeholderTextColor={colorScheme === 'light' ? 'black' : '#EDEBEB'}
             onChangeText={(e) => setReview(e)}
             value={review}
           />
-          <Text className="hover:cursor-pointer font-poppins text-black dark:text-dark">
+          <Text className="hover:cursor-pointer font-nunito-semi text-black dark:text-dark">
             {i18n.t('recommandLabel')}
           </Text>
 
@@ -167,7 +167,7 @@ const ShopRatingModal = (props: SheetProps<'shop-rating-sheet'>) => {
                 {
                   id: '1',
                   label: (
-                    <Text className="text-black dark:text-dark px-2">
+                    <Text className="text-black dark:text-dark px-2 font-nunito">
                       {i18n.t('yesTxt')}
                     </Text>
                   ),
@@ -177,7 +177,7 @@ const ShopRatingModal = (props: SheetProps<'shop-rating-sheet'>) => {
                 {
                   id: '2',
                   label: (
-                    <Text className="text-black dark:text-dark px-2">
+                    <Text className="text-black dark:text-dark px-2 font-nunito">
                       {i18n.t('noTxt')}
                     </Text>
                   ),
@@ -200,7 +200,7 @@ const ShopRatingModal = (props: SheetProps<'shop-rating-sheet'>) => {
               onPress={handleSubmit}
               // disabled={isLoading}
             >
-              <Text className="text-white font-bold text-lg">
+              <Text className="text-white font-nunito-semi text-lg">
                 {isLoading ? i18n.t('submittingTxt') : i18n.t('submitBtn')}
               </Text>
             </Pressable>

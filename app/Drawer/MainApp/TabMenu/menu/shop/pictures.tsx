@@ -222,7 +222,7 @@ const Pictures = () => {
           <BackButton />
         </View>
         <View className="w-full h-16 mx-2 flex flex-row justify-start items-center">
-          <Text className=" font-poppins-bold text-black dark:text-dark text-2xl tracking-wider">
+          <Text className=" font-bold font-oswald text-black dark:text-dark text-2xl tracking-wider">
             {i18n.t('pictures')}
           </Text>
         </View>
@@ -237,7 +237,7 @@ const Pictures = () => {
         }}
       >
         <View className="w-full h-auto flex justify-start items-start gap-y-3">
-          <Text className="font-bold text-lg text-black dark:text-dark text-start">
+          <Text className="font-nunito-semi text-lg text-black dark:text-dark text-start">
             {i18n.t('shopLogoLabel')}
           </Text>
           <View className="w-full h-fw-full flex flex-row justify-start items-center">
@@ -314,7 +314,7 @@ const Pictures = () => {
           </View>
         </View>
         <View className="w-full h-auto flex justify-start items-start gap-y-3">
-          <Text className="font-bold text-lg text-black dark:text-dark text-start">
+          <Text className="font-nunito-semi text-lg text-black dark:text-dark text-start">
             {i18n.t('shopPicturesLabel')}
           </Text>
           <ScrollView
@@ -494,11 +494,11 @@ const Pictures = () => {
           disabled={isDeleting.delete || isLoading}
         >
           {isUpadtingShopInfo ? (
-            <Text className="text-lg  font-poppins-bold text-white">
+            <Text className="text-lg  font-nunito-semi text-white">
               {i18n.t('savingTxt')}
             </Text>
           ) : (
-            <Text className="text-lg  font-poppins-bold text-white">
+            <Text className="text-lg  font-nunito-semi text-white">
               {i18n.t('saveBtn')}
             </Text>
           )}

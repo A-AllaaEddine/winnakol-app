@@ -59,7 +59,7 @@ const Main = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito-semi text-black dark:text-dark tracking-wide">
               {i18n.t('details')}
             </Text>
           </View>
@@ -100,7 +100,7 @@ const Main = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito-semi text-black dark:text-dark tracking-wide">
               {i18n.t('password')}
             </Text>
           </View>
@@ -141,7 +141,7 @@ const Main = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito-semi text-black dark:text-dark tracking-wide">
               {i18n.t('PorfilePicture')}
             </Text>
           </View>
@@ -182,7 +182,7 @@ const Main = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito-semi text-black dark:text-dark tracking-wide">
               {i18n.t('deleteAccount')}
             </Text>
           </View>

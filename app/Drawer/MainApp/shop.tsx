@@ -241,7 +241,7 @@ const ShopMain = () => {
                               : 'bg-red-500'
                           } w-2 h-2 rounded-full`}
                         />
-                        <Text className="text-sm h-full font-bold">
+                        <Text className="text-sm h-full font-bold font-oswald">
                           {shop?.status === 'open' ? 'Open' : 'Closed'}
                         </Text>
                       </View>
@@ -278,7 +278,7 @@ const ShopMain = () => {
                     // <View className="w-48 h-6  animate-pulse bg-gray-200 rounded-md" />
                     <Skeleton classname="w-48 h-8 rounded-full" />
                   ) : (
-                    <Text className="w-auto max-w-[250px] text-black dark:text-dark text-left truncate whitespace-nowrap text-2xl font-bold">
+                    <Text className="w-auto max-w-[250px] text-black dark:text-dark text-left truncate whitespace-nowrap text-2xl font-bold font-oswald">
                       {shop?.name}
                     </Text>
                   )}
@@ -316,10 +316,10 @@ const ShopMain = () => {
                         tintColor={colorScheme === 'dark' ? '#141414' : '#fff'}
                         readonly
                       />
-                      <Text className="text-sm text-left text-black dark:text-dark">
+                      <Text className="text-sm text-left text-black dark:text-dark font-nunito">
                         {shop?.averageRating.toFixed(1)}
                       </Text>
-                      <Text className="text-xs text-black dark:text-white">
+                      <Text className="text-xs text-black dark:text-white font-nunito">
                         ({formatNumber(shop?.totalReviews)}{' '}
                         {i18n.t('reviewsTxt')})
                       </Text>
@@ -331,7 +331,7 @@ const ShopMain = () => {
                     <Skeleton classname="w-28 h-4 rounded-full" />
                   ) : (
                     <View className="w-auto h-full flex flex-row justify-center items-center gap-x-1">
-                      <Text className="text-xs text-left text-black dark:text-dark">
+                      <Text className="text-xs text-left text-black dark:text-dark font-nunito">
                         {i18n.t('WorkingHours')}: {shop?.workingHours[0]}-
                         {shop?.workingHours[1]}
                       </Text>
@@ -366,7 +366,7 @@ const ShopMain = () => {
                             }}
                           >
                             <Text
-                              className={`text-xs  font-semibold  text-black dark:text-dark`}
+                              className={`text-xs  font-nunito-semi  text-black dark:text-dark`}
                             >
                               {item}
                             </Text>
@@ -392,7 +392,7 @@ const ShopMain = () => {
                   ) : (
                     <Text
                       numberOfLines={1}
-                      className="text-sm text-black dark:text-dark truncate whitespace-nowrap"
+                      className="text-sm text-black dark:text-dark truncate whitespace-nowrap font-nunito-semi"
                     >
                       {shop?.address?.street}
                     </Text>
@@ -456,7 +456,7 @@ const ShopMain = () => {
                             }`}
                           >
                             <Text
-                              className={`text-sm  font-semibold  ${
+                              className={`text-sm  font-nunito-semi  ${
                                 selectedFilter === item
                                   ? 'text-white'
                                   : 'text-black dark:text-dark'
@@ -498,7 +498,7 @@ const ShopMain = () => {
               </View>
             ) : (
               <View className="w-full h-36 flex justify-center items-center">
-                <Text className="text-xl text-black dark:text-dark font-poppins-bold">
+                <Text className="text-xl text-black dark:text-dark font-nunito-semi">
                   {i18n.t('noResultsText')}
                 </Text>
               </View>

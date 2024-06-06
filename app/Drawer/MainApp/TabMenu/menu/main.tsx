@@ -138,7 +138,7 @@ const Main = () => {
                     color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
                   />
                 </View>
-                <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+                <Text className="text-lg mx-2 font-nunito text-black dark:text-dark tracking-wide">
                   {i18n.t('shop')}
                 </Text>
               </View>
@@ -181,7 +181,7 @@ const Main = () => {
                   color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
                 />
               </View>
-              <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+              <Text className="text-lg mx-2 font-nunito text-black dark:text-dark tracking-wide">
                 {i18n.t('account')}
               </Text>
             </View>
@@ -223,7 +223,7 @@ const Main = () => {
                   color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
                 />
               </View>
-              <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+              <Text className="text-lg mx-2 font-nunito text-black dark:text-dark tracking-wide">
                 {i18n.t('appPreferences')}
               </Text>
             </View>
@@ -263,7 +263,7 @@ const Main = () => {
                   color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
                 />
               </View>
-              <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+              <Text className="text-lg mx-2 font-nunito text-black dark:text-dark tracking-wide">
                 {i18n.t('logOut')}
               </Text>
             </View>

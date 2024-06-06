@@ -102,10 +102,10 @@ const update = () => {
             {i18n.t('enyankom')}
           </Text> */}
           </View>
-          <Text className="text-2xl font-bold text-center text-black dark:text-dark">
+          <Text className="text-2xl font-nunito-semi text-center text-black dark:text-dark">
             {i18n.t('outdatedTxt')}
           </Text>
-          <Text className="text-lg text-center text-black dark:text-dark">
+          <Text className="text-lg text-center font-nunito text-black dark:text-dark">
             {i18n.t('mustUpdateTxt')}
           </Text>
           <Pressable

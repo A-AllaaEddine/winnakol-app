@@ -104,7 +104,7 @@ const Password = () => {
 
   return (
     <SafeAreaView className="bg-white dark:bg-dark">
-      <View className="w-full h-14 font-poppins flex flex-row justify-center items-center">
+      <View className="w-full h-14 flex flex-row justify-center items-center">
         <Logo width="300" height="150" />
         {/* <Text className="w-auto flex text-black dark:text-dark font-bold">
           <Text className="w-auto flex text-main font-bold">
@@ -114,7 +114,7 @@ const Password = () => {
         </Text> */}
       </View>
       <ScrollView
-        className="w-full h-screen  pt-32 font-poppins flex  px-8"
+        className="w-full h-screen  pt-32 flex  px-8"
         automaticallyAdjustKeyboardInsets
         contentContainerStyle={{
           justifyContent: 'center',
@@ -123,10 +123,7 @@ const Password = () => {
         }}
       >
         <View className="w-full h-auto flex flex-col justify-start items-start py-2">
-          {/* <Text className="w-auto text-start text-black dark:text-dark text-lg  font-poppins">
-        {i18n.t('emailLabel')}
-      </Text> */}
-          <Text className="w-full text-center text-2xl  font-bold text-black dark:text-dark">
+          <Text className="w-full text-center text-2xl  font-bold font-oswald text-black dark:text-dark">
             {i18n.t('setText')}
           </Text>
           <Controller
@@ -141,7 +138,7 @@ const Password = () => {
                 secureTextEntry
                 value={value}
                 defaultValue=""
-                className="w-full h-14 text-black dark:text-dark text-lg border-[1px] border-gray-400 rounded-full px-3 mt-6"
+                className="w-full h-14 font-nunito text-black dark:text-dark text-lg border-[1px] border-gray-400 rounded-full px-3 mt-6"
                 placeholder={i18n.t('newPasswordLabel')}
                 placeholderTextColor={'gray'}
               />
@@ -155,7 +152,7 @@ const Password = () => {
                 color={'red'}
                 className="bg-red-500"
               />
-              <Text className="w-full text-red-700 mx-2  font-poppins">
+              <Text className="w-full text-red-700 mx-2  font-nunito">
                 {errors.newPassword?.message}
               </Text>
             </View>
@@ -172,7 +169,7 @@ const Password = () => {
                 secureTextEntry
                 value={value}
                 defaultValue=""
-                className="w-full h-14 text-black dark:text-dark text-lg border-[1px] border-gray-400 rounded-full px-3 mt-6"
+                className="w-full h-14 font-nunito-semi text-black dark:text-dark text-lg border-[1px] border-gray-400 rounded-full px-3 mt-6"
                 placeholder={i18n.t('confirmPasswordLabel')}
                 placeholderTextColor={'gray'}
               />
@@ -186,7 +183,7 @@ const Password = () => {
                 color={'red'}
                 className="bg-red-500"
               />
-              <Text className="w-full text-red-700 mx-2  font-poppins">
+              <Text className="w-full text-red-700 mx-2 font-nunito">
                 {errors.ConfirmPassword?.message}
               </Text>
             </View>
@@ -198,11 +195,11 @@ const Password = () => {
           disabled={isLoading}
         >
           {isLoading ? (
-            <Text className="text-lg  font-poppins-bold text-white">
+            <Text className="text-lg  font-nunito-semi text-white">
               {i18n.t('savingTxt')}
             </Text>
           ) : (
-            <Text className="text-lg  font-poppins-bold text-white">
+            <Text className="text-lg  font-nunito-semi text-white">
               {i18n.t('saveBtn')}
             </Text>
           )}

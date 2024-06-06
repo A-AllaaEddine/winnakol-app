@@ -137,11 +137,11 @@ const Join = () => {
   };
   return (
     <SafeAreaView className="bg-white dark:bg-dark">
-      <View className="w-full  font-poppins h-20 flex flex-row justify-center items-center">
+      <View className="w-full   h-20 flex flex-row justify-center items-center">
         <LogoText width="120" height="120" />
       </View>
       <ScrollView
-        className="w-full font-poppins h-screen flex  px-8"
+        className="w-full  h-screen flex  px-8"
         // automaticallyAdjustKeyboardInsets
         contentContainerStyle={{
           justifyContent: 'center',
@@ -150,7 +150,7 @@ const Join = () => {
         }}
       >
         <View className="w-full h-auto  flex flex-col justify-start items-center">
-          <Text className=" text-start text-2xl text-black dark:text-dark font-bold">
+          <Text className=" text-start text-2xl text-black dark:text-dark font-bold font-oswald">
             {i18n.t('createAccountText')}
           </Text>
           <View className="w-full h-auto flex flex-col justify-start items-start mt-2">
@@ -169,7 +169,7 @@ const Join = () => {
                   value={value}
                   keyboardType="email-address"
                   defaultValue=""
-                  className={`w-full h-14 text-black dark:text-dark ${
+                  className={`w-full h-14 font-nunito text-black dark:text-dark ${
                     I18nManager.isRTL ? 'text-right' : 'text-left'
                   }  text-lg border-[1px] border-gray-400 rounded-full px-3 mt-3`}
                   placeholder={i18n.t('emailLabel')}
@@ -187,7 +187,7 @@ const Join = () => {
                 color={'red'}
                 className="bg-red-500"
               />
-              <Text className="w-full  font-poppins text-red-700 mx-2">
+              <Text className="w-full font-nunito text-red-700 mx-2">
                 {errors.email?.message}
               </Text>
             </View>
@@ -207,7 +207,7 @@ const Join = () => {
                   onChangeText={(v) => onChange(v)}
                   value={value}
                   defaultValue=""
-                  className={`w-full h-14 text-black dark:text-dark ${
+                  className={`w-full h-14 font-nunito text-black dark:text-dark ${
                     I18nManager.isRTL ? 'text-right' : 'text-left'
                   }  text-lg border-[1px] border-gray-400 rounded-full px-3 mt-3`}
                   placeholder={i18n.t('passwordLabel')}
@@ -224,7 +224,7 @@ const Join = () => {
                 color={'red'}
                 className="bg-red-500"
               />
-              <Text className="w-full  font-poppins text-red-700 mx-2">
+              <Text className="w-full font-nunito text-red-700 mx-2">
                 {errors.password?.message}
               </Text>
             </View>
@@ -235,11 +235,11 @@ const Join = () => {
             disabled={isLoading}
           >
             {isLoading ? (
-              <Text className="text-lg  font-poppins-bold text-white">
+              <Text className="text-lg  font-nunito-semi text-white">
                 {i18n.t('joiningTxt')}
               </Text>
             ) : (
-              <Text className="text-lg  font-poppins-bold text-white">
+              <Text className="text-lg  font-nunito-semi text-white">
                 {i18n.t('signUpBtn')}
               </Text>
             )}
@@ -247,7 +247,7 @@ const Join = () => {
           <View className="w-full h-1 bg-gray-200 rounded-md mt-5" />
           <View className="w-full h-10 flex flex-row justify-center items-center gap-x-2 mt-4">
             <View className="w-auto h-full flex justify-center items-center">
-              <Text className="text-lg text-black dark:text-dark font-poppins ">
+              <Text className="text-lg text-black dark:text-dark font-nunito">
                 {i18n.t('alreadyAmemberText')}{' '}
               </Text>
             </View>
@@ -255,7 +255,7 @@ const Join = () => {
               className="w-auto h-10 flex justify-center items-center"
               onPress={() => router.replace('/auth/login')}
             >
-              <Text className=" font-bold text-black dark:text-dark text-lg">
+              <Text className="font-nunito-semi text-black dark:text-dark text-lg">
                 {i18n.t('signInText')}
               </Text>
             </Pressable>

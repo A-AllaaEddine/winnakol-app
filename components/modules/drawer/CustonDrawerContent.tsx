@@ -63,7 +63,7 @@ const CustomDrawerContent = (props: any) => {
             <AntDesign name="linkedin-square" size={30} color="black" />
           </Pressable>
         </View> */}
-        <Text className="w-full h-10  font-poppins text-xl ">
+        <Text className="w-full h-10  text-xl font-nunito-semi ">
           © 2024 Winakol
         </Text>
       </View>

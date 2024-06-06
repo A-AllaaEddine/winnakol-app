@@ -89,7 +89,7 @@ const Favourites = () => {
           <BackButton />
         </View> */}
         <View className="w-full h-16 flex flex-row justify-start items-center">
-          <Text className=" font-bold  text-3xl text-black dark:text-dark tracking-wider">
+          <Text className=" font-bold font-oswald text-3xl text-black dark:text-dark tracking-wider">
             {i18n.t('bookmarksTitle')}
           </Text>
         </View>
@@ -114,7 +114,7 @@ const Favourites = () => {
             ListHeaderComponent={() => (
               <>
                 <View className="w-full h-auto bg-white dark:bg-dark flex flex-row justify-center items-center">
-                  <Text className="text-lg text-black dark:text-dark">
+                  <Text className="text-lg text-black dark:text-dark font-nunito-semi">
                     {i18n.t('shops')}
                   </Text>
                   <View>
@@ -182,7 +182,7 @@ const Favourites = () => {
                       </Pressable>
                     )}
                   </View>
-                  <Text className="text-lg text-black dark:text-dark">
+                  <Text className="text-lg text-black dark:text-dark font-nunito-semi">
                     {i18n.t('dishes')}
                   </Text>
                 </View>
@@ -218,7 +218,7 @@ const Favourites = () => {
                 </View>
               ) : (
                 <View className="w-full h-36 flex justify-center items-center">
-                  <Text className="text-xl text-black dark:text-dark font-poppins-bold">
+                  <Text className="text-xl text-black dark:text-dark font-nunito-semi">
                     {i18n.t('noData')}
                   </Text>
                 </View>
@@ -240,7 +240,7 @@ const Favourites = () => {
                   </View>
                 </View> */}
                 <View className="w-full h-auto bg-white dark:bg-dark flex flex-row justify-center items-center">
-                  <Text className="text-lg text-black dark:text-dark">
+                  <Text className="text-lg text-black dark:text-dark font-nunito-semi">
                     {i18n.t('shops')}
                   </Text>
                   <View>
@@ -308,7 +308,7 @@ const Favourites = () => {
                       </Pressable>
                     )}
                   </View>
-                  <Text className="text-lg text-black dark:text-dark">
+                  <Text className="text-lg text-black dark:text-dark font-nunito-semi">
                     {i18n.t('dishes')}
                   </Text>
                 </View>
@@ -342,7 +342,7 @@ const Favourites = () => {
                 </View>
               ) : (
                 <View className="w-full h-36 flex justify-center items-center">
-                  <Text className="text-xl text-black dark:text-dark font-poppins-bold">
+                  <Text className="text-xl text-black dark:text-dark font-nunito-semi">
                     {i18n.t('noData')}
                   </Text>
                 </View>

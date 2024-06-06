@@ -55,74 +55,74 @@ const Terms = () => {
         </View> */}
 
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold font-oswald text-black dark:text-dark">
             {i18n.t('termsTitle')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black font-nunito-semi dark:text-dark">
             {i18n.t('termsDesc')}
           </Text>
         </View>
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold text-black dark:text-dark font-nunito-semi">
             {i18n.t('acceptTitle')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito">
             {i18n.t('acceptDesc')}
           </Text>
         </View>
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold text-black dark:text-dark font-nunito-semi">
             {i18n.t('useTitle')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito">
             {i18n.t('useDesc')}
           </Text>
         </View>
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold text-black dark:text-dark font-nunito-semi">
             {i18n.t('accountTitle')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito">
             {i18n.t('accountDesc')}
           </Text>
         </View>
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold text-black dark:text-dark font-nunito-semi">
             {i18n.t('contentTitle')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito">
             {i18n.t('contentDesc')}
           </Text>
         </View>
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold text-black dark:text-dark font-nunito-semi">
             {i18n.t('shopTitle')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito">
             {i18n.t('shopDesc')}
           </Text>
         </View>
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold text-black dark:text-dark font-nunito-semi">
             {i18n.t('propertyTitle')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito">
             {i18n.t('propertyDesc')}
           </Text>
         </View>
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold text-black dark:text-dark font-nunito-semi">
             {i18n.t('liabilityTitle')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito">
             {i18n.t('liabilityDesc')}
           </Text>
         </View>
         <View className="w-full h-auto ">
-          <Text className="text-xl font-bold text-black dark:text-dark">
+          <Text className="text-xl font-bold text-black dark:text-dark font-nunito-semi">
             {i18n.t('changeTitle')}
           </Text>
-          <Text className=" text-lg mt-5 text-black dark:text-dark">
+          <Text className=" text-lg mt-5 text-black dark:text-dark font-nunito">
             {i18n.t('changeDesc')}
           </Text>
         </View>

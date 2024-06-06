@@ -109,7 +109,7 @@ const DishesMain = () => {
                   <BackButton />
                 </View>
                 <View className="w-full h-16 mx-2 flex flex-row justify-start items-center">
-                  <Text className=" font-poppins-bold text-black dark:text-dark text-2xl tracking-wider">
+                  <Text className=" font-bold font-oswald text-black dark:text-dark text-2xl tracking-wider">
                     {i18n.t('dishesTitle')}
                   </Text>
                 </View>
@@ -131,7 +131,7 @@ const DishesMain = () => {
                     size={24}
                     color={MainColor}
                   />
-                  <Text className="text-sm text-black dark:text-dark font-semibold mx-1">
+                  <Text className="text-sm text-black dark:text-dark font-nunito-semi mx-1">
                     {i18n.t('addDishTxt')}
                   </Text>
                 </Pressable>
@@ -153,7 +153,7 @@ const DishesMain = () => {
                         }`}
                       >
                         <Text
-                          className={`text-sm  font-semibold  ${
+                          className={`text-sm  font-nunito-semi  ${
                             selectedFilter === item
                               ? 'text-white'
                               : 'text-black dark:text-dark'
@@ -180,7 +180,7 @@ const DishesMain = () => {
                       </View>
                     ) : (
                       <View className="w-full h-36 flex justify-center items-center">
-                        <Text className="text-xl text-black dark:text-dark font-poppins-bold">
+                        <Text className="text-xl text-black dark:text-dark font-nunito-semi">
                           {i18n.t('noResultsText')}
                         </Text>
                       </View>
@@ -212,7 +212,7 @@ const DishesMain = () => {
               </View>
             ) : (
               <View className="w-full h-36 flex justify-center items-center">
-                <Text className="text-xl text-black dark:text-dark font-poppins-bold">
+                <Text className="text-xl text-black dark:text-dark font-nunito-semi">
                   {i18n.t('noResultsText')}
                 </Text>
               </View>

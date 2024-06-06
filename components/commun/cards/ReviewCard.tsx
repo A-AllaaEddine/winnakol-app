@@ -49,7 +49,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
         <View className="h-auto w-full">
           <Text
             numberOfLines={1}
-            className="w-[230px]  text-black dark:text-dark text-left text-sm font-bold truncate whitespace-nowrap"
+            className="w-[230px]  text-black dark:text-dark text-left text-sm font-bold font-oswald truncate whitespace-nowrap"
           >
             {review.reviewer?.name}
           </Text>
@@ -63,10 +63,10 @@ const ReviewCard = ({ review }: { review: Review }) => {
               tintColor={colorScheme === 'dark' ? '#141414' : '#fff'}
               readonly
             />
-            <Text className="text-xs text-left text-black dark:text-dark">
+            <Text className="text-xs text-left text-black dark:text-dark font-nunito">
               {review.rating.toFixed(1)}
             </Text>
-            <Text className="text-xs text-left text-black dark:text-dark">
+            <Text className="text-xs text-left text-black dark:text-dark font-nunito">
               {formatDistanceToNow(new Date(review.createdAt), {
                 addSuffix: true,
                 locale: getLocale(context?.currentLanguage),
@@ -76,7 +76,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
         </View>
       </View>
       <View className="w-full min-h-[70px] p-2 mt-2 bg-sub dark:bg-dark-card rounded-xl">
-        <Text className="text-sm  text-left text-black dark:text-dark">
+        <Text className="text-sm  text-left text-black dark:text-dark font-nunito-semi">
           {review.review}
         </Text>
       </View>
@@ -92,7 +92,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
             }}
             className="w-auto h-full px-2 py-1 rounded-full bg-sub dark:bg-dark-card"
           >
-            <Text className="text-xs text-black dark:text-dark font-semibold">
+            <Text className="text-xs text-black dark:text-dark font-nunito-semi">
               {i18n.t('reportReviewTxt')}
             </Text>
           </Pressable>
@@ -111,7 +111,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
                 }}
                 className="w-auto h-full px-2 py-1 rounded-full bg-sub dark:bg-dark-card mx-2"
               >
-                <Text className="text-xs text-black dark:text-dark font-semibold">
+                <Text className="text-xs text-black dark:text-dark font-nunito-semi">
                   {i18n.t('editReviewTxt')}
                 </Text>
               </Pressable>
@@ -126,7 +126,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
               }}
               className="w-auto h-full px-2 py-1 rounded-full bg-sub dark:bg-dark-card"
             >
-              <Text className="text-xs text-red-500 font-semibold">
+              <Text className="text-xs text-red-500 font-nunito-semi">
                 {i18n.t('deleteReviewTxt')}
               </Text>
             </Pressable>

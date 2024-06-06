@@ -39,7 +39,7 @@ const Preferences = () => {
           <BackButton />
         </View>
         <View className="w-full  h-16 mx-2 flex flex-row justify-start items-center">
-          <Text className=" font-poppins-bold text-black dark:text-dark text-2xl tracking-wider">
+          <Text className=" font-bold font-oswald text-black dark:text-dark text-2xl tracking-wider">
             {i18n.t('preferencesTitle')}
           </Text>
         </View>
@@ -64,7 +64,7 @@ const Preferences = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito text-black dark:text-dark tracking-wide">
               {i18n.t('darkMode')}
             </Text>
           </View>
@@ -216,7 +216,7 @@ const Preferences = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito text-black dark:text-dark tracking-wide">
               {i18n.t('language')}
             </Text>
           </View>

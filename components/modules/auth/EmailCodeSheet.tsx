@@ -109,14 +109,14 @@ const EmailCodeSheet = (props: SheetProps<'code-sheet'>) => {
       gestureEnabled
       CustomHeaderComponent={
         <View className="w-full h-16 flex flex-row justify-center items-center">
-          <Text className="text-lg text-black dark:text-dark font-bold">
+          <Text className="text-lg text-black dark:text-dark font-bold font-oswald">
             {i18n.t('enterCodeText')}
           </Text>
         </View>
       }
     >
       <View className="h-[250px] bg-transparent">
-        <Text className="text-black dark:text-dark text-sm">
+        <Text className="text-black dark:text-dark text-sm font-nunito-semi">
           {i18n.t('enterEmailCode')}
         </Text>
         <View className="w-full h-auto flex flex-col justify-start items-start py-2">
@@ -135,7 +135,7 @@ const EmailCodeSheet = (props: SheetProps<'code-sheet'>) => {
                 value={value}
                 maxLength={6}
                 defaultValue=""
-                className="w-full h-14 text-black dark:text-dark text-lg border-[1px] border-gray-400 rounded-full px-3 mt-6"
+                className="w-full h-14 text-black font-nunito dark:text-dark text-lg border-[1px] border-gray-400 rounded-full px-3 mt-6"
                 placeholder={i18n.t('codeLabel')}
                 placeholderTextColor={'gray'}
               />
@@ -150,7 +150,7 @@ const EmailCodeSheet = (props: SheetProps<'code-sheet'>) => {
                 color={'red'}
                 className="bg-red-500"
               />
-              <Text className="w-full text-red-700 mx-2  font-poppins">
+              <Text className="w-full text-red-700 mx-2  font-nunito-semi">
                 {errors.code?.message}
               </Text>
             </View>
@@ -162,11 +162,11 @@ const EmailCodeSheet = (props: SheetProps<'code-sheet'>) => {
           disabled={isLoading}
         >
           {isLoading ? (
-            <Text className="text-lg  font-poppins-bold text-white">
+            <Text className="text-lg  font-nunito-semi text-white">
               {i18n.t('verifyingTxt')}
             </Text>
           ) : (
-            <Text className="text-lg  font-poppins-bold text-white">
+            <Text className="text-lg  font-nunito-semi text-white">
               {i18n.t('verifyEmailBtn')}
             </Text>
           )}

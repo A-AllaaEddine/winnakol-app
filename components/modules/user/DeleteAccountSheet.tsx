@@ -75,11 +75,11 @@ const DeleteAccountSheet = (props: SheetProps<'account-delete-sheet'>) => {
     >
       <View className="w-full h-full flex pt-10 justify-start items-center px-6 gap-y-10">
         <View className="w-full h-auto flex justify-start items-start gap-y-1">
-          <Text className="w-full  font-poppins text-[#6e6e6e] dark:text-dark text-start text-xl">
+          <Text className="w-full  font-nunito-semi text-[#6e6e6e] dark:text-dark text-start text-xl">
             {i18n.t('areYouSureDeleteTxt')}
           </Text>
           {session?.user.isShopOwner && (
-            <Text className="text-slate-300">
+            <Text className="text-slate-300 font-nunito">
               {i18n.t('deleteAllShopsTxt')}
             </Text>
           )}
@@ -90,11 +90,11 @@ const DeleteAccountSheet = (props: SheetProps<'account-delete-sheet'>) => {
           disabled={isLoading}
         >
           {isLoading ? (
-            <Text className="text-lg  font-bold text-black dark:text-white">
+            <Text className="text-lg  font-nunito-semi text-black dark:text-white">
               {i18n.t('deletingTxt')}
             </Text>
           ) : (
-            <Text className="text-lg  font-bold text-black dark:text-white">
+            <Text className="text-lg  font-nunito-semi text-black dark:text-white">
               {i18n.t('deleteBtn')}
             </Text>
           )}
