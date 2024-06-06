@@ -40,4 +40,12 @@ export const accountAr = {
   errorSelectingImgTxt: 'حدث خطأ أثناء تحميل صورتك.',
   passwordShortTxt: 'يجب أن تكون كلمة المرور مكونة من 8 أحرف على الأقل.',
   passwordsDontMatch: 'كلمات المرور غير متطابقة.',
+  deleteAccount: 'حذف الحساب',
+  accountDeleted: 'تم حذف الحساب',
+  errorDeletingAccountTxt: 'حدث خطأ أثناء حذف حسابك.',
+  areYouSureDeleteTxt: 'هل أنت متأكد أنك تريد حذف حسابك؟',
+  deleteAllShopsTxt:
+    'سيؤدي ذلك إلى حذف جميع المطاعم التي تملكها ولا يمكن استعادتها.',
+  deleteBtn: 'حذف',
+  deletingTxt: 'جارٍ الحذف...',
 };

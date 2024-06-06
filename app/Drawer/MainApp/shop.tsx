@@ -1,3 +1,4 @@
+import LogoSplash from '@/assets/images/logo_splash.svg';
 import DishCard from '@/components/commun/cards/DishCard';
 import DishSkeletonCard from '@/components/commun/cards/DishSkeletonCard';
 import BackButton from '@/components/commun/static/BackButton';
@@ -17,9 +18,8 @@ import {
   MaterialIcons,
 } from '@expo/vector-icons';
 import { useSession } from '@fullauth/react-native';
-import { FlashList } from '@shopify/flash-list';
 import { useLocalSearchParams } from 'expo-router';
-import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import {
   FlatList,
   I18nManager,
@@ -169,25 +169,23 @@ const ShopMain = () => {
                   </View>
                   <View className="w-12 h-12 p-1 bg-sub rounded-full absolute top-10 right-4 z-20 shadow-sm">
                     {isFetchingShop ? (
-                      <Skeleton classname="w-full h-full rounded-full" />
-                    ) : (
+                      <Skeleton classname="w-full h-full rounded-full bg-slate-200" />
+                    ) : shop?.shopLogo.url ? (
                       <Image
                         source={{
-                          uri:
-                            shop?.shopLogo.url ??
-                            require('@/assets/images/no_image.png'),
+                          uri: shop?.shopLogo.url,
                         }}
                         className="w-full h-full bg-slate-200 dark:bg-dark-card rounded-full"
                       />
+                    ) : (
+                      <View className="w-full h-full bg-gray-300 flex justify-center items-center rounded-xl">
+                        <LogoSplash width="50" height="50" />
+                      </View>
                     )}
                   </View>
                   {isFetchingShop ? (
                     <Skeleton classname="w-full h-fullrounded-bl-2xl rounded-br-2xl" />
                   ) : (
-                    // <Image
-                    //   source={{ uri: (shop as Shop)?.shopPicture.url }}
-                    //   className="w-full h-full bg-slate-200 dark:bg-dark-card rounded-bl-2xl rounded-br-2xl"
-                    // />
                     <View className="w-full h-full justify-center items-center">
                       {(shop as Shop).shopPictures![0]?.url ? (
                         <Swiper
@@ -201,10 +199,10 @@ const ShopMain = () => {
                           autoplay
                           autoplayTimeout={3}
                         >
-                          {(shop as Shop)?.shopPictures.map((item) => {
+                          {(shop as Shop)?.shopPictures.map((item, idx) => {
                             return (
                               <Pressable
-                                key={item.key}
+                                key={idx}
                                 onPress={() => {
                                   setSelectedImg(item.url);
                                   setShowShopPics(true);
@@ -220,7 +218,13 @@ const ShopMain = () => {
                           })}
                         </Swiper>
                       ) : (
-                        <View className="w-full h-full bg-gray-300" />
+                        <View className="w-full h-full bg-gray-300 flex justify-center items-center">
+                          <LogoSplash
+                            width="150"
+                            height="150"
+                            // className="w-full h-full bg-slate-200 dark:bg-dark-card rounded-bl-2xl rounded-br-2xl"
+                          />
+                        </View>
                       )}
                     </View>
                   )}
@@ -237,7 +241,7 @@ const ShopMain = () => {
                               : 'bg-red-500'
                           } w-2 h-2 rounded-full`}
                         />
-                        <Text className="text-sm h-full font-bold">
+                        <Text className="text-sm h-full font-bold font-oswald">
                           {shop?.status === 'open' ? 'Open' : 'Closed'}
                         </Text>
                       </View>
@@ -274,7 +278,7 @@ const ShopMain = () => {
                     // <View className="w-48 h-6  animate-pulse bg-gray-200 rounded-md" />
                     <Skeleton classname="w-48 h-8 rounded-full" />
                   ) : (
-                    <Text className="w-auto max-w-[250px] text-black dark:text-dark text-left truncate whitespace-nowrap text-2xl font-bold">
+                    <Text className="w-auto max-w-[250px] text-black dark:text-dark text-left truncate whitespace-nowrap text-2xl font-bold font-oswald">
                       {shop?.name}
                     </Text>
                   )}
@@ -312,10 +316,10 @@ const ShopMain = () => {
                         tintColor={colorScheme === 'dark' ? '#141414' : '#fff'}
                         readonly
                       />
-                      <Text className="text-sm text-left text-black dark:text-dark">
+                      <Text className="text-sm text-left text-black dark:text-dark font-nunito">
                         {shop?.averageRating.toFixed(1)}
                       </Text>
-                      <Text className="text-xs text-black dark:text-white">
+                      <Text className="text-xs text-black dark:text-white font-nunito">
                         ({formatNumber(shop?.totalReviews)}{' '}
                         {i18n.t('reviewsTxt')})
                       </Text>
@@ -327,7 +331,7 @@ const ShopMain = () => {
                     <Skeleton classname="w-28 h-4 rounded-full" />
                   ) : (
                     <View className="w-auto h-full flex flex-row justify-center items-center gap-x-1">
-                      <Text className="text-xs text-left text-black dark:text-dark">
+                      <Text className="text-xs text-left text-black dark:text-dark font-nunito">
                         {i18n.t('WorkingHours')}: {shop?.workingHours[0]}-
                         {shop?.workingHours[1]}
                       </Text>
@@ -362,7 +366,7 @@ const ShopMain = () => {
                             }}
                           >
                             <Text
-                              className={`text-xs  font-semibold  text-black dark:text-dark`}
+                              className={`text-xs  font-nunito-semi  text-black dark:text-dark`}
                             >
                               {item}
                             </Text>
@@ -388,7 +392,7 @@ const ShopMain = () => {
                   ) : (
                     <Text
                       numberOfLines={1}
-                      className="text-sm text-black dark:text-dark truncate whitespace-nowrap"
+                      className="text-sm text-black dark:text-dark truncate whitespace-nowrap font-nunito-semi"
                     >
                       {shop?.address?.street}
                     </Text>
@@ -452,7 +456,7 @@ const ShopMain = () => {
                             }`}
                           >
                             <Text
-                              className={`text-sm  font-semibold  ${
+                              className={`text-sm  font-nunito-semi  ${
                                 selectedFilter === item
                                   ? 'text-white'
                                   : 'text-black dark:text-dark'
@@ -486,15 +490,15 @@ const ShopMain = () => {
               <View className="w-full px-4 h-auto flex flex-row flex-wrap justify-between items-center2">
                 {Array.from({ length: 6 }, (_, i) => i).map((__, idx) => {
                   return (
-                    <View className="my-2">
-                      <DishSkeletonCard key={idx} />
+                    <View className="my-2" key={idx}>
+                      <DishSkeletonCard />
                     </View>
                   );
                 })}
               </View>
             ) : (
               <View className="w-full h-36 flex justify-center items-center">
-                <Text className="text-xl text-black dark:text-dark font-poppins-bold">
+                <Text className="text-xl text-black dark:text-dark font-nunito-semi">
                   {i18n.t('noResultsText')}
                 </Text>
               </View>

@@ -1,7 +1,9 @@
+import LogoSplash from '@/assets/images/logo_splash.svg';
 import ReviewCard from '@/components/commun/cards/ReviewCard';
 import ReviewSkeletonCard from '@/components/commun/cards/ReviewSkeletonCard';
 import BackButton from '@/components/commun/static/BackButton';
 import Skeleton from '@/components/commun/static/Skeleton';
+import { MainColor } from '@/constants/colors';
 import { useColorScheme } from '@/context/ColorSchemeContext';
 import { languageContext } from '@/context/LanguageContext';
 import { DishAr } from '@/locales/ar/dish';
@@ -28,8 +30,6 @@ import {
 import { SheetManager } from 'react-native-actions-sheet';
 import ImageView from 'react-native-image-viewing-rtl';
 import { Rating } from 'react-native-ratings';
-import { t } from '../../../../../winnakol-next/server/trpc';
-import { MainColor } from '@/constants/colors';
 
 const DishMain = () => {
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
@@ -148,16 +148,22 @@ const DishMain = () => {
                   <View className="absolute top-10 z-30 left-4">
                     <BackButton bg />
                   </View>
-                  <Pressable
-                    onPress={() => {
-                      setShowDishPic(true);
-                    }}
-                  >
-                    <Image
-                      source={{ uri: dish.imgUrl.url }}
-                      className="w-full h-full bg-slate-200 rounded-bl-2xl rounded-br-2xl"
-                    />
-                  </Pressable>
+                  {dish.imgUrl.url ? (
+                    <Pressable
+                      onPress={() => {
+                        setShowDishPic(true);
+                      }}
+                    >
+                      <Image
+                        source={{ uri: dish.imgUrl.url }}
+                        className="w-full h-full bg-slate-200 rounded-bl-2xl rounded-br-2xl"
+                      />
+                    </Pressable>
+                  ) : (
+                    <View className="w-full h-full bg-gray-300 flex justify-center items-center rounded-xl">
+                      <LogoSplash width="50" height="50" />
+                    </View>
+                  )}
                   <View
                     className="w-auto h-auto flex flex-row justify-end items-center  absolute bottom-5 right-4
                   rounded-full shadow-md dark:shadow-none bg-white  p-3"
@@ -191,7 +197,7 @@ const DishMain = () => {
                   {isFetchingDish ? (
                     <Skeleton classname="w-48 h-6" />
                   ) : (
-                    <Text className="text-2xl font-bold text-black dark:text-dark">
+                    <Text className="text-2xl font-bold font-oswald text-black dark:text-dark">
                       {dish.name}
                     </Text>
                   )}
@@ -227,10 +233,10 @@ const DishMain = () => {
                         tintColor={colorScheme === 'dark' ? '#141414' : '#fff'}
                         readonly
                       />
-                      <Text className="text-sm text-black dark:text-dark">
+                      <Text className="text-sm text-black dark:text-dark font-nunito">
                         {dish.averageRating.toFixed(1)}
                       </Text>
-                      <Text className="text-xs text-black dark:text-dark">
+                      <Text className="text-xs text-black dark:text-dark font-nunito">
                         ({formatNumber(dish.totalReviews)} reviews)
                       </Text>
                     </View>
@@ -239,13 +245,13 @@ const DishMain = () => {
                 {isFetchingDish ? (
                   <Skeleton classname="w-full h-16 mt-3" />
                 ) : (
-                  <Text className="max-h-[80px] text-left truncate text-black dark:text-dark whitespace-break-spaces text-sm mt-3">
+                  <Text className="max-h-[80px] text-left truncate font-nunito text-black dark:text-dark whitespace-break-spaces text-sm mt-3">
                     {dish.description}
                   </Text>
                 )}
               </View>
               <View className="mt-5 px-4">
-                <Text className="text-lg font-bold text-black dark:text-dark">
+                <Text className="text-lg text-black dark:text-dark font-oswald font-bold">
                   {i18n.t('ingredientsTxt')}
                 </Text>
                 {isFetchingDish ? (
@@ -287,7 +293,7 @@ const DishMain = () => {
                     }}
                     ListEmptyComponent={
                       <View className="w-full h-auto flex justify-center items-center">
-                        <Text className="text-sm text-left font-poppins-bold text-black dark:text-dark">
+                        <Text className="text-sm text-left font-nunito text-black dark:text-dark">
                           {i18n.t('noIngredientsTxt')}
                         </Text>
                       </View>
@@ -296,7 +302,7 @@ const DishMain = () => {
                 )}
               </View>
               <View className="mt-5 px-4">
-                <Text className="text-lg font-bold text-black dark:text-dark">
+                <Text className="text-lg font-bold text-black font-oswald dark:text-dark">
                   {i18n.t('reviewsTxt')}
                 </Text>
               </View>
@@ -333,7 +339,7 @@ const DishMain = () => {
               </>
             ) : (
               <View className="w-full h-36 flex justify-center items-center">
-                <Text className="text-xl text-black dark:text-dark font-poppins-bold">
+                <Text className="text-xl text-black dark:text-dark font-nunito-semi">
                   {i18n.t('noResultsText')}
                 </Text>
               </View>

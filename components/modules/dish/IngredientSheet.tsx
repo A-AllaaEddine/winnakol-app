@@ -9,7 +9,7 @@ import ActionSheet, { SheetProps } from 'react-native-actions-sheet';
 import { ShopSettingsEn } from '@/locales/en/shopSettings';
 import { ShopSettingsFr } from '@/locales/fr/shopSettings';
 import { ShopSettingsAr } from '@/locales/ar/shopSettings';
-import { FlashList } from '@shopify/flash-list';
+import { FlashList } from 'react-native-actions-sheet/dist/src/views/FlashList';
 
 const IngredientSheet = (props: SheetProps<'ingredient-sheet'>) => {
   const [ingredients, setIngrendients] = useState(
@@ -40,7 +40,7 @@ const IngredientSheet = (props: SheetProps<'ingredient-sheet'>) => {
       gestureEnabled
       CustomHeaderComponent={
         <View className="w-full h-16 flex flex-row justify-center items-center">
-          <Text className="text-lg text-black dark:text-dark font-bold">
+          <Text className="text-lg text-black dark:text-dark font-bold font-oswald">
             {i18n.t('selectedIngredientsPlaceholder')}
           </Text>
         </View>
@@ -59,7 +59,7 @@ const IngredientSheet = (props: SheetProps<'ingredient-sheet'>) => {
           }) => {
             return (
               <Pressable
-                className={`w-full h-12 flex flex-row justify-center items-center rounded-lg my-2 ${
+                className={`w-full h-12 flex flex-row justify-center items-center font-nunito-semi rounded-full my-2 ${
                   ingredients.includes(item.value)
                     ? 'bg-main'
                     : 'bg-white dark:bg-dark'

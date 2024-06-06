@@ -31,7 +31,7 @@ const defaultFormFields = {
 };
 
 const Login = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isCheckingSession, setIsChecingSession] = useState<boolean>(true);
   const { update, session, status } = useSession();
   // const { expoPushToken, notification } = usePushNotification();
@@ -169,7 +169,7 @@ const Login = () => {
         </View>
       ) : (
         <>
-          <View className="w-full h-20 font-poppins flex flex-row justify-center items-center">
+          <View className="w-full h-20 flex flex-row justify-center items-center">
             <LogoText width="120" height="120" />
             {/* <Text className="w-auto flex text-black dark:text-dark font-bold">
               <Text className="w-auto flex text-main font-bold">
@@ -179,7 +179,7 @@ const Login = () => {
             </Text> */}
           </View>
           <ScrollView
-            className="w-full h-screen font-poppins flex  px-8"
+            className="w-full h-screen flex  px-8"
             contentContainerStyle={{
               justifyContent: 'center',
               alignItems: 'center',
@@ -187,13 +187,10 @@ const Login = () => {
             }}
           >
             <View className="w-full h-auto flex flex-col justify-start items-center">
-              <Text className="w-full text-center text-2xl  font-bold text-black dark:text-dark">
+              <Text className="w-full text-center text-2xl  font-bold font-oswald text-black dark:text-dark">
                 {i18n.t('signInText')}
               </Text>
               <View className="w-full h-auto flex flex-col justify-start items-start mt-2">
-                {/* <Text className="w-auto text-start text-lg  font-poppins text-black dark:text-dark">
-                  {i18n.t('emailLabel')}
-                </Text> */}
                 <Controller
                   defaultValue=""
                   name="email"
@@ -207,7 +204,7 @@ const Login = () => {
                       keyboardType="email-address"
                       defaultValue=""
                       placeholderTextColor={'gray'}
-                      className={`w-full h-14 text-black dark:text-dark ${
+                      className={`w-full h-14 font-nunito text-black dark:text-dark ${
                         I18nManager.isRTL ? 'text-right' : 'text-left'
                       }  text-lg border-[1px] border-gray-400 rounded-full px-3 mt-3`}
                       placeholder={i18n.t('emailLabel')}
@@ -224,15 +221,12 @@ const Login = () => {
                     color={'red'}
                     className="bg-red-500"
                   />
-                  <Text className="w-full text-red-700 mx-2  font-poppins">
+                  <Text className="w-full text-red-700 mx-2  font-nunito">
                     {errors.email?.message}
                   </Text>
                 </View>
               ) : null}
               <View className="w-full h-auto flex flex-col justify-start items-start mt-2">
-                {/* <Text className="w-auto text-start text-lg text-black dark:text-dark font-poppins">
-                  {i18n.t('passwordLabel')}
-                </Text> */}
                 <Controller
                   defaultValue=""
                   name="password"
@@ -243,7 +237,7 @@ const Login = () => {
                       onChangeText={(v) => onChange(v)}
                       value={value}
                       defaultValue=""
-                      className={`w-full h-14 text-black dark:text-dark ${
+                      className={`w-full h-14 font-nunito text-black dark:text-dark ${
                         I18nManager.isRTL ? 'text-right' : 'text-left'
                       }  text-lg border-[1px] border-gray-400 rounded-full px-3 mt-3`}
                       placeholder={i18n.t('passwordLabel')}
@@ -260,7 +254,7 @@ const Login = () => {
                     color={'red'}
                     className="bg-red-500"
                   />
-                  <Text className="w-full text-red-700 mx-2  font-poppins">
+                  <Text className="w-full text-red-700 mx-2 font-nunito">
                     {errors.password?.message}
                   </Text>
                 </View>
@@ -271,7 +265,7 @@ const Login = () => {
                   SheetManager.show('reset-sheet');
                 }}
               >
-                <Text className="text-lg mt-4 text-black dark:text-dark font-poppins-bold">
+                <Text className="text-lg mt-4 text-black dark:text-dark font-nunito-semi">
                   {i18n.t('forgotPasswordText')}
                 </Text>
               </Pressable>
@@ -281,11 +275,11 @@ const Login = () => {
                 disabled={isLoading}
               >
                 {isLoading ? (
-                  <Text className="text-lg  font-poppins-bold text-white">
+                  <Text className="text-lg font-nunito-semi text-white">
                     {i18n.t('loggingInTxt')}
                   </Text>
                 ) : (
-                  <Text className="text-lg  font-poppins-bold text-white">
+                  <Text className="text-lg font-nunito-semi text-white">
                     {i18n.t('loginBtn')}
                   </Text>
                 )}
@@ -293,7 +287,7 @@ const Login = () => {
               <View className="w-full h-1 bg-gray-200 rounded-md mt-5" />
               <View className="w-full h-10 flex flex-row justify-center items-center gap-x-2 mt-4">
                 <View className="w-auto h-full flex justify-center items-center">
-                  <Text className="text-lg text-black dark:text-dark font-poppins">
+                  <Text className="text-lg text-black dark:text-dark font-nunito">
                     {i18n.t('dontHaveAnAccountText')}{' '}
                   </Text>
                 </View>
@@ -301,7 +295,7 @@ const Login = () => {
                   className="w-auto h-10 flex justify-center items-center"
                   onPress={() => router.replace('/auth/join')}
                 >
-                  <Text className=" font-bold text-black dark:text-dark text-lg">
+                  <Text className=" font-nunito-semi text-black dark:text-dark text-lg">
                     {i18n.t('createText')}
                   </Text>
                 </Pressable>

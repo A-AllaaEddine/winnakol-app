@@ -81,7 +81,7 @@ const RestaurantName = () => {
           <BackButton />
         </View>
         <View className="w-full h-16 mx-2 flex flex-row justify-start items-center">
-          <Text className=" font-poppins-bold text-black dark:text-dark  text-2xl tracking-wider">
+          <Text className=" font-bold font-oswald text-black dark:text-dark  text-2xl tracking-wider">
             {i18n.t('RestaurantName')}
           </Text>
         </View>
@@ -120,7 +120,7 @@ const RestaurantName = () => {
         )} */}
         <View className="w-full h-auto  ">
           <View className="w-full h-auto flex flex-col justify-start items-start ">
-            <Text className="w-auto text-start text-lg text-black dark:text-dark  font-poppins">
+            <Text className="w-auto text-start text-lg text-black dark:text-dark  font-nunito-semi">
               {i18n.t('nameLabel')}
             </Text>
             <Controller
@@ -134,7 +134,7 @@ const RestaurantName = () => {
                   }}
                   value={value}
                   defaultValue=""
-                  className="w-full h-14  text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-md px-2 mt-3"
+                  className="w-full h-14 font-nunito text-lg border-[1px] text-black dark:text-dark border-gray-400 rounded-full px-2 mt-3"
                   placeholder={i18n.t('nameLabel')}
                 />
               )}
@@ -148,21 +148,21 @@ const RestaurantName = () => {
                 color={'red'}
                 className="bg-red-500"
               />
-              <Text className="w-full text-red-700 mx-2  font-poppins">
+              <Text className="w-full text-red-700 mx-2  font-nunito">
                 {errors.name?.message}
               </Text>
             </View>
           ) : null}
           <Pressable
             onPress={handleSubmit(onSubmit)}
-            className="w-full h-14 p-2 rounded-md bg-black dark:bg-dark-btn flex justify-center items-center my-6"
+            className="w-full h-14 p-2 rounded-full bg-black dark:bg-dark-btn flex justify-center items-center my-6"
           >
             {isLoading ? (
-              <Text className="text-lg  font-poppins-bold text-white">
+              <Text className="text-lg  font-nunito-semi text-white">
                 {i18n.t('savingTxt')}
               </Text>
             ) : (
-              <Text className="text-lg  font-poppins-bold text-white">
+              <Text className="text-lg  font-nunito-semi text-white">
                 {i18n.t('saveBtn')}
               </Text>
             )}

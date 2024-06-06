@@ -39,4 +39,12 @@ export const accountEn = {
   errorSelectingImgTxt: 'There was an error uploading your image.',
   passwordShortTxt: 'Password must be at least 8 characters long.',
   passwordsDontMatch: 'Passwords do not match.',
+  deleteAccount: 'Delete Account',
+  accountDeleted: 'Account deleted',
+  errorDeletingAccountTxt: 'There was an error deleting your account.',
+  areYouSureDeleteTxt: 'Are you sure you want to delete your account?',
+  deleteAllShopsTxt:
+    'This will delete all the restaurants you own and cannot be restored.',
+  deleteBtn: 'Delete',
+  deletingTxt: 'Deleting...',
 };

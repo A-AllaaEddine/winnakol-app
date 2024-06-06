@@ -12,4 +12,9 @@ export const CodeFr = {
   invalidCodeTxt: 'Le code est invalide',
   enterCodeText: 'Entrez le code de vérification',
   codeRequired: 'Le code est requis.',
+  verifyEmailBtn: "Vérifier l'e-mail",
+  enterEmailCode:
+    'Entrez le code envoyé à votre email ci-dessous pour vérifier votre compte :',
+  sendingTxt: 'Envoi en cours...',
+  emailSent: 'Un code a été envoyé à votre adresse e-mail',
 };

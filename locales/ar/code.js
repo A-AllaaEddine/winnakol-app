@@ -11,4 +11,9 @@ export const CodeAr = {
   invalidCodeTxt: 'الرمز غير صالح',
   enterCodeText: 'أدخل رمز التحقق',
   codeRequired: 'الرمز مطلوب.',
+  verifyEmailBtn: 'تحقق ',
+  enterEmailCode:
+    'أدخل الرمز المرسل إلى بريدك الإلكتروني أدناه للتحقق من حسابك:',
+  sendTxt: 'إرسال...',
+  emailSent: 'تم إرسال الرمز إلى بريدك الإلكتروني.',
 };

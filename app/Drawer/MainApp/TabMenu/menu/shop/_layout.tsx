@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
 
-const Menu = () => {
+const ShopLayout = () => {
   return (
     <Stack
       initialRouteName="main"
@@ -15,8 +15,9 @@ const Menu = () => {
       <Stack.Screen name="phones" />
       <Stack.Screen name="dishes" />
       <Stack.Screen name="hours" />
+      <Stack.Screen name="pictures" />
     </Stack>
   );
 };
 
-export default Menu;
+export default ShopLayout;

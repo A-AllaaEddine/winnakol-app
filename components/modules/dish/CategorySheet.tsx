@@ -6,13 +6,13 @@ import { categoriesEn } from '@/locales/en/categories';
 import { ShopSettingsEn } from '@/locales/en/shopSettings';
 import { categoriesFr } from '@/locales/fr/categories';
 import { ShopSettingsFr } from '@/locales/fr/shopSettings';
-import { FlashList } from '@shopify/flash-list';
 import { useContext, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import ActionSheet, {
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
+import { FlashList } from 'react-native-actions-sheet/dist/src/views/FlashList';
 
 const CategorySheet = (props: SheetProps<'category-sheet'>) => {
   const [selectedCategory, setSelectedCategory] = useState(
@@ -44,7 +44,7 @@ const CategorySheet = (props: SheetProps<'category-sheet'>) => {
       gestureEnabled
       CustomHeaderComponent={
         <View className="w-full h-16 flex flex-row justify-center items-center">
-          <Text className="text-lg text-black dark:text-dark font-bold">
+          <Text className="text-lg text-black dark:text-dark font-bold font-oswald">
             {i18n.t('selectedCategoryPlaceholder')}
           </Text>
         </View>
@@ -63,7 +63,7 @@ const CategorySheet = (props: SheetProps<'category-sheet'>) => {
           }) => {
             return (
               <Pressable
-                className={`w-full h-12 flex flex-row justify-center items-center rounded-lg my-2 ${
+                className={`w-full h-12 flex flex-row justify-center items-center rounded-full my-2 font-nunito-semi ${
                   selectedCategory === item.value
                     ? 'bg-main'
                     : 'bg-white dark:bg-dark'

@@ -1,11 +1,11 @@
 import { useColorScheme } from '@/context/ColorSchemeContext';
-import { FlashList } from '@shopify/flash-list';
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import ActionSheet, {
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
+import { FlashList } from 'react-native-actions-sheet/dist/src/views/FlashList';
 
 const HourSheet = (props: SheetProps<'hours-sheet'>) => {
   const [selectedHour, setSelectedHour] = useState(props.payload?.hour ?? '');
@@ -52,7 +52,7 @@ const HourSheet = (props: SheetProps<'hours-sheet'>) => {
       gestureEnabled
       CustomHeaderComponent={
         <View className="w-full h-16 flex flex-row justify-center items-center">
-          <Text className="text-lg text-black dark:text-dark font-bold">
+          <Text className="text-lg text-black dark:text-dark font-bold font-oswald">
             {props.payload?.header}
           </Text>
         </View>
@@ -74,7 +74,7 @@ const HourSheet = (props: SheetProps<'hours-sheet'>) => {
           }) => {
             return (
               <Pressable
-                className={`w-full h-12 flex flex-row justify-center items-center rounded-lg my-2 ${
+                className={`w-full h-12 flex flex-row justify-center items-center font-nunito-semi rounded-full my-2 ${
                   selectedHour === item.value
                     ? 'bg-main'
                     : 'bg-white dark:bg-dark'
@@ -82,7 +82,7 @@ const HourSheet = (props: SheetProps<'hours-sheet'>) => {
                 onPress={async () => {
                   props.payload?.setHour(item.value);
                   setSelectedHour(item.value);
-                  await SheetManager.hide('category-sheet');
+                  await SheetManager.hide('hours-sheet');
                 }}
               >
                 <Text

@@ -7,8 +7,9 @@ import { ShopSettingsFr } from '@/locales/fr/shopSettings';
 import { trpc } from '@/trpc/client';
 import { Review } from '@/types/types';
 import { useContext, useState } from 'react';
-import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable, Text, TextInput, View } from 'react-native';
 import ActionSheet, {
+  ScrollView,
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
@@ -112,16 +113,13 @@ const ReviewEditSheet = (props: SheetProps<'review-edit-sheet'>) => {
       gestureEnabled
       CustomHeaderComponent={
         <View className="w-full h-16 flex flex-row justify-center items-center">
-          <Text className="text-lg text-black dark:text-dark font-bold">
+          <Text className="text-lg text-black dark:text-dark font-bold font-oswald">
             {i18n.t('editReviewTitle')}
           </Text>
         </View>
       }
     >
-      <ScrollView
-        className="w-full h-auto  bg-white dark:bg-dark px-6  "
-        scrollEnabled={false}
-      >
+      <ScrollView className="w-full h-auto  bg-white dark:bg-dark px-6  ">
         <View className="w-full gap-y-4 rounded-md">
           <View className="w-full h-auto items-start">
             <Rating
@@ -139,13 +137,13 @@ const ReviewEditSheet = (props: SheetProps<'review-edit-sheet'>) => {
             numberOfLines={4}
             multiline
             textAlignVertical="top"
-            className="w-full h-32 text-black dark:text-dark  bg-slate-200 dark:bg-dark-card rounded-lg px-2"
+            className="w-full h-32 text-black dark:text-dark  font-nunito bg-slate-200 dark:bg-dark-card rounded-lg px-2"
             placeholder={i18n.t('writeReviewPlaceholder')}
             placeholderTextColor={colorScheme === 'light' ? 'black' : '#EDEBEB'}
             onChangeText={(e) => setReview(e)}
             value={review}
           />
-          <Text className="hover:cursor-pointer font-poppins text-black dark:text-dark">
+          <Text className="hover:cursor-pointer font-nunito-semi text-black dark:text-dark">
             {i18n.t('recommandDishLabel')}
           </Text>
 
@@ -155,7 +153,7 @@ const ReviewEditSheet = (props: SheetProps<'review-edit-sheet'>) => {
                 {
                   id: '1',
                   label: (
-                    <Text className="text-black dark:text-dark px-2">
+                    <Text className="text-black dark:text-dark px-2 font-nunito">
                       {i18n.t('yesTxt')}
                     </Text>
                   ),
@@ -165,7 +163,7 @@ const ReviewEditSheet = (props: SheetProps<'review-edit-sheet'>) => {
                 {
                   id: '2',
                   label: (
-                    <Text className="text-black dark:text-dark px-2">
+                    <Text className="text-black dark:text-dark px-2 font-nunito">
                       {i18n.t('noTxt')}
                     </Text>
                   ),
@@ -184,11 +182,11 @@ const ReviewEditSheet = (props: SheetProps<'review-edit-sheet'>) => {
           <View className="mt-4 ">
             <Pressable
               className="w-auto h-12 flex justify-center items-center text-lg
-          font-bold bg-black dark:bg-dark-btn rounded-lg"
+          font-bold bg-black dark:bg-dark-btn rounded-full"
               onPress={handleSubmit}
               // disabled={isLoading}
             >
-              <Text className="text-white font-bold text-lg">
+              <Text className="text-white font-nunito-semi text-lg">
                 {isLoading ? i18n.t('submittingTxt') : i18n.t('submitBtn')}
               </Text>
             </Pressable>

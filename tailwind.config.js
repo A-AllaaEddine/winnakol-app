@@ -21,6 +21,11 @@ module.exports = {
         main: '#D1302A',
         dark: '#141414',
       },
+      fontFamily: {
+        oswald: ['Oswald_700Bold'],
+        nunito: ['NunitoSans_400Regular'],
+        'nunito-semi': ['NunitoSans_600SemiBold'],
+      },
     },
   },
   plugins: [],

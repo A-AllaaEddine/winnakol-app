@@ -8,10 +8,10 @@ import { ShopEn } from '@/locales/en/shop';
 import { ShopFr } from '@/locales/fr/shop';
 // import { UsernameFr } from '@/locales/fr/username';
 import { trpc } from '@/trpc/client';
-import { router } from 'expo-router';
 import { useContext, useState } from 'react';
-import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable, Text, TextInput, View } from 'react-native';
 import ActionSheet, {
+  ScrollView,
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
@@ -104,21 +104,18 @@ const ShopReportModal = (props: SheetProps<'shop-report-sheet'>) => {
         backgroundColor: colorScheme === 'light' ? 'white' : '#141414',
         minHeight: 500,
       }}
+      closable={!isLoading}
       headerAlwaysVisible={true}
       gestureEnabled
       CustomHeaderComponent={
         <View className="w-full h-16 flex flex-row justify-center items-center">
-          <Text className="text-lg text-black dark:text-dark font-bold">
+          <Text className="text-lg text-black dark:text-dark font-bold font-oswald">
             {i18n.t('reportTitle')}
           </Text>
         </View>
       }
     >
-      <ScrollView
-        className="w-full h-auto  bg-white dark:bg-dark px-4  "
-        scrollEnabled={false}
-        automaticallyAdjustKeyboardInsets
-      >
+      <ScrollView className="w-full h-auto  bg-white dark:bg-dark px-4  ">
         {/* {Platform.OS === 'android' ? (
         <View className="w-full h-16 flex flex-row justify-start items-end">
           <View className="w-16   h-16 ">
@@ -140,10 +137,10 @@ const ShopReportModal = (props: SheetProps<'shop-report-sheet'>) => {
             </Text>
           </View> */}
           <View className="w-full h-auto flex justify-start items-start gap-y-4 mt-3">
-            <Text className="text-black dark:text-dark text-lg font-bold">
+            <Text className="text-black dark:text-dark text-lg font-nunito-semi">
               {i18n.t('whyTxt')}
             </Text>
-            <Text className=" text-slate-400 text-sm">
+            <Text className=" text-slate-400 text-sm font-nunito">
               {i18n.t('anonymouysTxt')}
             </Text>
             <View className="h-auto  flex flex-row flex-wrap gap-3 mt-4">
@@ -152,7 +149,7 @@ const ShopReportModal = (props: SheetProps<'shop-report-sheet'>) => {
                   <Pressable
                     key={idx}
                     className={`flex justify-center items-center w-auto h-8
-                     font-bold  px-3 rounded-full 
+                    font-nunito-semi  px-3 rounded-full 
                     ${
                       selectedTag === tag.value
                         ? ' bg-main'
@@ -172,7 +169,7 @@ const ShopReportModal = (props: SheetProps<'shop-report-sheet'>) => {
                         selectedTag === tag.value
                           ? 'text-white'
                           : 'text-slate-500 dark:text-dark'
-                      }`}
+                      } font-nunito-semi`}
                     >
                       {tag.label as string}
                     </Text>
@@ -182,14 +179,14 @@ const ShopReportModal = (props: SheetProps<'shop-report-sheet'>) => {
             </View>
           </View>
           <View className="flex justify-start items-start gap-y-3">
-            <Text className="text-lg text-black dark:text-dark font-bold">
+            <Text className="text-lg text-black dark:text-dark font-nunito-semi">
               {i18n.t('reasonTxt')}
             </Text>
-            <Text className=" text-slate-400 text-sm">
+            <Text className=" text-slate-400 text-sm font-nunito">
               {i18n.t('helpUsTxt')}
             </Text>
             <TextInput
-              className="w-full h-32 text-black dark:text-dark  bg-slate-200 dark:bg-dark-card rounded-lg px-2"
+              className="w-full h-32 text-black font-nunito dark:text-dark  bg-slate-200 dark:bg-dark-card rounded-lg px-2"
               // placeholder="Describe the reason..."
               placeholderTextColor={
                 colorScheme === 'light' ? 'black' : '#EDEBEB'
@@ -204,11 +201,11 @@ const ShopReportModal = (props: SheetProps<'shop-report-sheet'>) => {
           <View className="">
             <Pressable
               className="w-auto h-12 flex justify-center items-center text-white text-lg
-            font-bold bg-black dark:bg-dark-btn rounded-lg"
+            font-bold bg-black dark:bg-dark-btn rounded-full"
               onPress={handleSubmit}
               disabled={isLoading}
             >
-              <Text className="text-white font-bold text-lg">
+              <Text className="text-white font-nunito-semi text-lg">
                 {isLoading ? i18n.t('submittingTxt') : i18n.t('submitBtn')}
               </Text>
             </Pressable>

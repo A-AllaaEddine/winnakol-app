@@ -46,4 +46,13 @@ export const accountFr = {
     'Il y a eu une erreur lors du téléchargement de votre image.',
   passwordShortTxt: 'Le mot de passe doit comporter au moins 8 caractères.',
   passwordsDontMatch: 'Les mots de passe ne correspondent pas.',
+  deleteAccount: 'Supprimer le compte',
+  accountDeleted: 'Compte supprimé',
+  errorDeletingAccountTxt:
+    "Une erreur s'est produite lors de la suppression de votre compte.",
+  areYouSureDeleteTxt: 'Êtes-vous sûr de vouloir supprimer votre compte ?',
+  deleteAllShopsTxt:
+    'Cela supprimera tous les restaurants que vous possédez et ne peut pas être restauré.',
+  deleteBtn: 'Supprimer',
+  deletingTxt: 'Suppression...',
 };

@@ -1,19 +1,12 @@
 import { useColorScheme } from '@/context/ColorSchemeContext';
 import { languageContext } from '@/context/LanguageContext';
-import { categoriesAr } from '@/locales/ar/categories';
 import { ResetAr } from '@/locales/ar/reset';
-import { ShopSettingsAr } from '@/locales/ar/shopSettings';
-import { categoriesEn } from '@/locales/en/categories';
 import { ResetEn } from '@/locales/en/reset';
-import { ShopSettingsEn } from '@/locales/en/shopSettings';
-import { categoriesFr } from '@/locales/fr/categories';
 import { ResetFr } from '@/locales/fr/reset';
-import { ShopSettingsFr } from '@/locales/fr/shopSettings';
 import { trpc } from '@/trpc/client';
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { FlashList } from '@shopify/flash-list';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import ActionSheet, {
@@ -106,11 +99,12 @@ const ResetSheet = (props: SheetProps<'reset-sheet'>) => {
         maxHeight: '90%',
         paddingHorizontal: 20,
       }}
+      closable={!isLoading}
       headerAlwaysVisible={true}
       gestureEnabled
       CustomHeaderComponent={
         <View className="w-full h-16 flex flex-row justify-center items-center">
-          <Text className="text-lg text-black dark:text-dark font-bold">
+          <Text className="text-lg text-black dark:text-dark font-bold font-oswald">
             {i18n.t('resetText')}
           </Text>
         </View>
@@ -137,7 +131,7 @@ const ResetSheet = (props: SheetProps<'reset-sheet'>) => {
                 inputMode="email"
                 value={value}
                 defaultValue=""
-                className="w-full h-14 text-black dark:text-dark text-lg border-[1px] border-gray-400 rounded-full px-3 mt-6"
+                className="w-full h-14 text-black font-nunito dark:text-dark text-lg border-[1px] border-gray-400 rounded-full px-3 mt-6"
                 placeholder={i18n.t('emailLabel')}
                 placeholderTextColor={'gray'}
               />
@@ -152,7 +146,7 @@ const ResetSheet = (props: SheetProps<'reset-sheet'>) => {
                 color={'red'}
                 className="bg-red-500"
               />
-              <Text className="w-full text-red-700 mx-2  font-poppins">
+              <Text className="w-full text-red-700 mx-2  font-nunito-semi">
                 {errors.email?.message}
               </Text>
             </View>
@@ -164,11 +158,11 @@ const ResetSheet = (props: SheetProps<'reset-sheet'>) => {
           disabled={isLoading}
         >
           {isLoading ? (
-            <Text className="text-lg  font-poppins-bold text-white">
+            <Text className="text-lg  font-nunito-semi text-white">
               {i18n.t('sendingTxt')}
             </Text>
           ) : (
-            <Text className="text-lg  font-poppins-bold text-white">
+            <Text className="text-lg  font-nunito-semi text-white">
               {i18n.t('sendEmailBtn')}
             </Text>
           )}

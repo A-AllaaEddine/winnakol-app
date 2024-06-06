@@ -11,4 +11,9 @@ export const CodeEn = {
   invalidCodeTxt: 'The code is invalid',
   enterCodeText: 'Enter verification code',
   codeRequired: 'Code is required.',
+  verifyEmailBtn: 'Verify Email',
+  enterEmailCode:
+    'Enter the code sent to your email below to verify your account:',
+  sendingTxt: 'Sending...',
+  emailSent: 'A code has been sent to your email.',
 };

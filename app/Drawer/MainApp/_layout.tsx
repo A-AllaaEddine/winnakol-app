@@ -7,26 +7,8 @@ const TabLayout = () => {
         name="TabMenu"
         options={{ headerShown: false, gestureEnabled: false }}
       />
-      {/* <Stack.Screen
-        name="stepOne"
-        options={{ headerShown: false, gestureEnabled: false }}
-      />
-      <Stack.Screen
-        name="stepTwo"
-        options={{ headerShown: false, gestureEnabled: false }}
-      />
-      <Stack.Screen
-        name="stepThree"
-        options={{ headerShown: false, gestureEnabled: false }}
-      />
-      <Stack.Screen
-        name="stepFour"
-        options={{ headerShown: false, gestureEnabled: false }}
-      />
-      <Stack.Screen
-        name="stepFive"
-        options={{ headerShown: false, gestureEnabled: false }}
-      /> */}
+      <Stack.Screen name="shop" options={{ headerShown: false }} />
+      <Stack.Screen name="dish" options={{ headerShown: false }} />
     </Stack>
   );
 };

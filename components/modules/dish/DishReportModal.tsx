@@ -9,8 +9,9 @@ import { ShopFr } from '@/locales/fr/shop';
 // import { UsernameFr } from '@/locales/fr/username';
 import { trpc } from '@/trpc/client';
 import { useContext, useState } from 'react';
-import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable, Text, TextInput, View } from 'react-native';
 import ActionSheet, {
+  ScrollView,
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
@@ -115,16 +116,13 @@ const DishReportModal = (props: SheetProps<'dish-report-sheet'>) => {
       gestureEnabled
       CustomHeaderComponent={
         <View className="w-full h-16 flex flex-row justify-center items-center">
-          <Text className="text-lg text-black dark:text-dark font-bold">
+          <Text className="text-lg text-black dark:text-dark font-bold font-oswald">
             {i18n.t('reportTitle')}
           </Text>
         </View>
       }
     >
-      <ScrollView
-        className="w-full h-auto  bg-white dark:bg-dark px-6  "
-        scrollEnabled={false}
-      >
+      <ScrollView className="w-full h-auto  bg-white dark:bg-dark px-6  ">
         {/* <StatusBar style="light" /> */}
         {/* <View className="w-full h-12  flex flex-row justify-center items-center px-3">
           <View className="w-36 h-2 bg-slate-300 rounded-full" />
@@ -136,10 +134,10 @@ const DishReportModal = (props: SheetProps<'dish-report-sheet'>) => {
           </Text>
         </View> */}
           <View className="w-full h-auto flex justify-start items-start gap-y-4 mt-3">
-            <Text className="text-black dark:text-dark text-lg font-bold">
+            <Text className="text-black dark:text-dark text-lg font-nunito-semi">
               {i18n.t('whyDishTxt')}
             </Text>
-            <Text className=" text-slate-400 text-sm">
+            <Text className=" text-slate-400 text-sm font-nunito">
               {i18n.t('anonymouysTxt')}
             </Text>
             <View className="h-auto  flex flex-row flex-wrap gap-3 mt-4">
@@ -148,7 +146,7 @@ const DishReportModal = (props: SheetProps<'dish-report-sheet'>) => {
                   <Pressable
                     key={idx}
                     className={`flex justify-center items-center w-auto h-8
-                     font-bold  px-3 rounded-full 
+                    font-nunito-semi  px-3 rounded-full 
                     ${
                       selectedTag === tag.value
                         ? ' bg-main'
@@ -168,7 +166,7 @@ const DishReportModal = (props: SheetProps<'dish-report-sheet'>) => {
                         selectedTag === tag.value
                           ? 'text-white'
                           : 'text-slate-500 dark:text-dark'
-                      }`}
+                      } font-nunito-semi`}
                     >
                       {tag.label as string}
                     </Text>
@@ -178,14 +176,14 @@ const DishReportModal = (props: SheetProps<'dish-report-sheet'>) => {
             </View>
           </View>
           <View className="flex justify-start items-start gap-y-3">
-            <Text className="text-lg text-black dark:text-dark font-bold">
+            <Text className="text-lg text-black dark:text-dark font-nunito-semi">
               {i18n.t('reasonTxt')}
             </Text>
-            <Text className=" text-slate-400 text-sm">
+            <Text className=" text-slate-400 text-sm font-nunito">
               {i18n.t('helpUsTxt')}
             </Text>
             <TextInput
-              className="w-full h-32 text-black dark:text-dark  bg-slate-200 dark:bg-dark-card rounded-lg px-2"
+              className="w-full h-32 text-black dark:text-dark font-nunito  bg-slate-200 dark:bg-dark-card rounded-lg px-2"
               // placeholder="Describe the reason..."
               placeholderTextColor={'black'}
               numberOfLines={4}
@@ -198,11 +196,11 @@ const DishReportModal = (props: SheetProps<'dish-report-sheet'>) => {
           <View className="mt-4 ">
             <Pressable
               className="w-auto h-12 flex justify-center items-center text-lg
-              font-bold bg-black dark:bg-dark-btn rounded-lg"
+              font-bold bg-black dark:bg-dark-btn rounded-full"
               onPress={handleSubmit}
               // disabled={isLoading}
             >
-              <Text className="text-white font-bold text-lg">
+              <Text className="text-white font-nunito-semi text-lg">
                 {isLoading ? i18n.t('submittingTxt') : i18n.t('submitBtn')}
               </Text>
             </Pressable>

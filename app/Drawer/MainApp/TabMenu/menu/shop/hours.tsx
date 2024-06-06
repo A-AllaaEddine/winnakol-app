@@ -66,13 +66,13 @@ const WorkingHours = () => {
           <BackButton />
         </View>
         <View className="w-full h-16 mx-2 flex flex-row justify-start items-center">
-          <Text className=" font-poppins-bold text-black dark:text-dark  text-2xl tracking-wider">
+          <Text className=" font-oswald font-bold text-black dark:text-dark  text-2xl tracking-wider">
             {i18n.t('WorkingHours')}
           </Text>
         </View>
       </View>
-      <View className="h-full w-full font-poppins flex flex-col justify-start items-center pb-40 px-6">
-        <Text className="w-full text-start text-lg text-black dark:text-dark  font-poppins mb-2">
+      <View className="h-full w-full flex flex-col justify-start items-center pb-40 px-6">
+        <Text className="w-full text-start text-lg text-black dark:text-dark  font-nunito-semi mb-2">
           {i18n.t('startingHour')}
         </Text>
         <Pressable
@@ -85,7 +85,7 @@ const WorkingHours = () => {
               },
             })
           }
-          className="w-full h-12 rounded-lg bg-white dark:bg-dark-card flex flex-row justify-between items-center p-2"
+          className="w-full h-12 rounded-full bg-white dark:bg-dark-card border-[1px] border-slate-300 dark:border-none dark:border-dark flex flex-row justify-between items-center py-2 px-4"
         >
           <Text className="text-lg text-black dark:text-dark">
             {startingHour}
@@ -97,7 +97,7 @@ const WorkingHours = () => {
           />
         </Pressable>
 
-        <Text className="w-full text-start text-lg text-black dark:text-dark font-poppins mb-2 mt-5">
+        <Text className="w-full text-start text-lg text-black dark:text-dark font-nunito-semi mb-2 mt-5">
           {i18n.t('endingHour')}
         </Text>
         <Pressable
@@ -110,7 +110,7 @@ const WorkingHours = () => {
               },
             })
           }
-          className="w-full h-12 rounded-lg bg-white dark:bg-dark-card flex flex-row justify-between items-center p-2"
+          className="w-full h-12 rounded-full bg-white dark:bg-dark-card border-[1px] border-slate-300 dark:border-none dark:border-dark flex flex-row justify-between items-center py-2 px-4"
         >
           <Text className="text-lg text-black dark:text-dark">
             {endingHour}
@@ -123,14 +123,14 @@ const WorkingHours = () => {
         </Pressable>
         <Pressable
           onPress={handleSubmit}
-          className="w-full h-14 p-2 rounded-md bg-black dark:bg-dark-btn flex justify-center items-center my-6"
+          className="w-full h-14 p-2 rounded-full bg-black dark:bg-dark-btn flex justify-center items-center my-6"
         >
           {isLoading ? (
-            <Text className="text-lg  font-poppins-bold text-white">
+            <Text className="text-lg  font-nunito-semi text-white">
               {i18n.t('savingTxt')}
             </Text>
           ) : (
-            <Text className="text-lg  font-poppins-bold text-white">
+            <Text className="text-lg  font-nunito-semi text-white">
               {i18n.t('saveBtn')}
             </Text>
           )}

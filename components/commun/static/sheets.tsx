@@ -20,6 +20,8 @@ import ReviewEditSheet from '../ActionSheets/ReviewEditSheet';
 import ReviewReportSheet from '../ActionSheets/ReviewReportSheet';
 import ResetSheet from '@/components/modules/auth/ResetSheet';
 import CodeSheet from '@/components/modules/auth/CodeSheet';
+import EmailCodeSheet from '@/components/modules/auth/EmailCodeSheet';
+import DeleteAccountSheet from '@/components/modules/user/DeleteAccountSheet';
 
 registerSheet('language-sheet', LanguageSheet);
 registerSheet('address-sheet', AddressSheet);
@@ -40,6 +42,8 @@ registerSheet('review-edit-sheet', ReviewEditSheet);
 registerSheet('review-report-sheet', ReviewReportSheet);
 registerSheet('reset-sheet', ResetSheet);
 registerSheet('code-sheet', CodeSheet);
+registerSheet('email-code-sheet', EmailCodeSheet);
+registerSheet('account-delete-sheet', DeleteAccountSheet);
 
 // We extend some of the types here to give us great intellisense
 // across the app for all registered sheets.
@@ -142,6 +146,12 @@ declare module 'react-native-actions-sheet' {
         email: string;
       };
     }>;
+    'email-code-sheet': SheetDefinition<{
+      payload: {
+        email: string;
+      };
+    }>;
+    'account-delete-sheet': SheetDefinition;
   }
 }
 

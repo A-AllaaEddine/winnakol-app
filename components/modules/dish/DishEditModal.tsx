@@ -5,7 +5,6 @@ import { useContext, useState } from 'react';
 import { languageContext } from '@/context/LanguageContext';
 import {
   Pressable,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -29,6 +28,7 @@ import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 import { authHeaders } from '@fullauth/react-native';
 import * as ImagePicker from 'expo-image-picker';
 import ActionSheet, {
+  ScrollView,
   SheetManager,
   SheetProps,
 } from 'react-native-actions-sheet';
@@ -190,6 +190,7 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
         left: 0,
         right: 0,
       }}
+      closable={!isLoading}
       headerAlwaysVisible={true}
       gestureEnabled
       snapPoints={[85]}
@@ -265,7 +266,7 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
             </View>
           </View>
           <View className="w-full h-auto flex justify-start items-start gap-y-3">
-            <Text className=" font-poppins-bold text-black dark:text-dark text-lg text-start">
+            <Text className=" font-nunito-semi text-black dark:text-dark text-lg text-start">
               {i18n.t('nameLabel')}
             </Text>
             <TextInput
@@ -279,12 +280,12 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
               defaultValue=""
               textAlignVertical="center"
               placeholderTextColor={'black'}
-              className="w-full h-14  text-black dark:text-dark text-start text-lg bg-slate-100 dark:bg-dark-card rounded-md px-2 mt-3"
+              className="w-full h-14 font-nunito text-black dark:text-dark text-start text-lg bg-slate-100 dark:bg-dark-card rounded-full px-4 mt-3"
               placeholder={i18n.t('nameLabel')}
             />
           </View>
           <View className="w-full h-auto flex justify-start items-start gap-y-3">
-            <Text className=" text-black dark:text-dark font-poppins-bold text-lg text-start">
+            <Text className=" text-black dark:text-dark font-nunito-semi text-lg text-start">
               {i18n.t('priceLabel')}
             </Text>
             <TextInput
@@ -298,12 +299,12 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
               defaultValue=""
               textAlignVertical="center"
               placeholderTextColor={'black'}
-              className="w-full h-14 text-black dark:text-dark  text-start text-lg bg-slate-100 dark:bg-dark-card rounded-md px-2 mt-3"
+              className="w-full h-14 font-nunito text-black dark:text-dark  text-start text-lg bg-slate-100 dark:bg-dark-card rounded-full px-4 mt-3"
               placeholder={i18n.t('priceLabel')}
             />
           </View>
           <View className="w-full h-auto flex justify-start items-start gap-y-3">
-            <Text className=" text-black dark:text-dark font-poppins-bold text-lg text-start">
+            <Text className=" text-black dark:text-dark font-nunito-semi text-lg text-start">
               {i18n.t('descLabel')}
             </Text>
             <TextInput
@@ -318,12 +319,12 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
               maxLength={100}
               textAlignVertical="center"
               placeholderTextColor={'black'}
-              className="w-full h-36 text-black dark:text-dark text-start text-lg bg-slate-100 dark:bg-dark-card rounded-md px-2 mt-3"
+              className="w-full h-36 font-nunito text-black dark:text-dark text-start text-lg bg-slate-100 dark:bg-dark-card rounded-md px-2 mt-3"
               placeholder={i18n.t('descLabel')}
             />
           </View>
           <View className="w-full h-auto flex justify-start items-start gap-y-3">
-            <Text className="w-full text-black dark:text-dark font-poppins-bold text-xl text-start">
+            <Text className="w-full text-black dark:text-dark font-nunito-semi text-xl text-start">
               {i18n.t('ingredientsLabel')}
             </Text>
             <Pressable
@@ -335,9 +336,9 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
                   },
                 })
               }
-              className="w-full h-12 rounded-lg bg-white dark:bg-dark-card flex flex-row justify-between items-center p-2"
+              className="w-full h-12 rounded-full bg-white dark:bg-dark-card border-[1px] border-slate-300 dark:border-none dark:border-dark flex flex-row justify-between items-center py-2 px-4"
             >
-              <Text className="text-lg text-black dark:text-dark">
+              <Text className="text-lg text-black font-nunito-semi dark:text-dark">
                 {i18n.t('selectedIngredientsPlaceholder')}
               </Text>
               <MaterialIcons
@@ -347,9 +348,10 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
               />
             </Pressable>
             <View className="w-full h-auto max-h-[100px] min-h-[50px] flex flex-row flex-wrap justify-start gap-1">
-              {selectedIngredients.map((ing) => {
+              {selectedIngredients.map((ing, idx) => {
                 return (
                   <TouchableOpacity
+                    key={idx}
                     onPress={() =>
                       setSelectedIngredients((prev) =>
                         prev?.filter((ingr: string) => ingr !== ing)
@@ -364,7 +366,7 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
                       }}
                     >
                       <Text
-                        className=" font-poppins"
+                        className=" font-nunito"
                         style={{
                           ...styles.textSelectedStyle,
                           color: colorScheme === 'light' ? 'black' : '#EDEBEB',
@@ -384,7 +386,7 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
             </View>
           </View>
           <View className="w-full h-auto flex justify-start items-start gap-y-3">
-            <Text className="w-full text-black dark:text-dark font-poppins-bold text-xl text-start">
+            <Text className="w-full text-black dark:text-dark font-nunito-semi text-xl text-start">
               {i18n.t('categoryLabel')}
             </Text>
             <Pressable
@@ -396,9 +398,9 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
                   },
                 })
               }
-              className="w-full h-12 rounded-lg bg-white dark:bg-dark-card flex flex-row justify-between items-center p-2"
+              className="w-full h-12 rounded-full bg-white dark:bg-dark-card border-[1px] border-slate-300 dark:border-none dark:border-dark flex flex-row justify-between items-center py-2 px-4"
             >
-              <Text className="text-lg text-black dark:text-dark">
+              <Text className="text-lg text-black dark:text-dark font-nunito-semi">
                 {formFields.category
                   ? formFields.category.charAt(0).toUpperCase() +
                     formFields.category.slice(1)
@@ -414,11 +416,11 @@ const DishEditModal = (props: SheetProps<'dish-edit-sheet'>) => {
           <View className="">
             <Pressable
               className="w-auto h-12 flex justify-center items-center  text-lg
-            font-bold bg-black dark:bg-dark-btn rounded-lg"
+            font-bold bg-black dark:bg-dark-btn rounded-full"
               onPress={handleSubmit}
               disabled={isLoading}
             >
-              <Text className="text-white font-poppins-bold text-lg">
+              <Text className="text-white font-nunito-semi text-lg">
                 {isLoading ? i18n.t('savingTxt') : i18n.t('saveBtn')}
               </Text>
             </Pressable>

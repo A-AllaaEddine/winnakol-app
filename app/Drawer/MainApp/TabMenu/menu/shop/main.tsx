@@ -25,7 +25,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Dropdown } from 'react-native-element-dropdown';
 
 const Shop = () => {
   const shopsCxt = useContext(shopsContext);
@@ -88,7 +87,7 @@ const Shop = () => {
           <BackButton />
         </View>
         <View className="w-full h-16 mx-2 flex flex-row justify-start items-center">
-          <Text className="  text-2xl text-black dark:text-dark tracking-wider">
+          <Text className=" font-oswald font-bold text-2xl text-black dark:text-dark tracking-wider">
             {i18n.t('restaurantSettingsTitle')}
           </Text>
         </View>
@@ -116,7 +115,7 @@ const Shop = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito-semi text-black dark:text-dark tracking-wide">
               {i18n.t('status')}
             </Text>
           </View>
@@ -207,7 +206,7 @@ const Shop = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito-semi text-black dark:text-dark tracking-wide">
               {i18n.t('WorkingHours')}
             </Text>
           </View>
@@ -253,7 +252,7 @@ const Shop = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark">
+            <Text className="text-lg mx-2 font-nunito-semi text-black dark:text-dark">
               {i18n.t('dishes')}
             </Text>
           </View>
@@ -294,7 +293,7 @@ const Shop = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito-semi text-black dark:text-dark tracking-wide">
               {i18n.t('RestaurantName')}
             </Text>
           </View>
@@ -341,7 +340,7 @@ const Shop = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito-semi text-black dark:text-dark tracking-wide">
               {i18n.t('pictures')}
             </Text>
           </View>
@@ -382,7 +381,7 @@ const Shop = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito-semi text-black dark:text-dark tracking-wide">
               {i18n.t('localisation')}
             </Text>
           </View>
@@ -423,7 +422,7 @@ const Shop = () => {
                 color={colorScheme === 'dark' ? '#EDEBEB' : 'black'}
               />
             </View>
-            <Text className="text-lg mx-2 font-poppins text-black dark:text-dark tracking-wide">
+            <Text className="text-lg mx-2 font-nunito-semi text-black dark:text-dark tracking-wide">
               {i18n.t('phoneNumbers')}
             </Text>
           </View>

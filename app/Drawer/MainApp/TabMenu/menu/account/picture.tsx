@@ -16,8 +16,8 @@ import Toast from 'react-native-toast-message';
 const Picture = () => {
   const { session } = useSession();
   const searchParams = useLocalSearchParams();
-  const shopId = searchParams.shopId as string;
 
+  const [isUpalading, setIsUploading] = useState(false);
   const [picturePreview, setPicturePreview] = useState(
     session?.user.profilePicture
   );
@@ -45,6 +45,7 @@ const Picture = () => {
     }
 
     try {
+      setIsUploading(true);
       const updates: {
         profilePicture?: any;
       } = {};
@@ -78,11 +79,13 @@ const Picture = () => {
         });
       }
       setPictureFiles(null);
+      setIsUploading(false);
       Toast.show({
         type: 'success',
         text1: i18n.t('savedTxt'),
       });
     } catch (error: any) {
+      setIsUploading(false);
       switch (error) {
         case 'Profile Picture is required.':
           return Toast.show({
@@ -114,7 +117,7 @@ const Picture = () => {
           <BackButton />
         </View>
         <View className="w-full h-16 mx-2 flex flex-row justify-start items-center">
-          <Text className=" font-poppins-bold text-black dark:text-dark text-3xl tracking-wider">
+          <Text className=" font-bold font-oswald text-black dark:text-dark text-3xl tracking-wider">
             {i18n.t('profilePictureLabel')}
           </Text>
         </View>
@@ -203,15 +206,15 @@ const Picture = () => {
         <Pressable
           onPress={handleSubmit}
           className="w-full h-14 p-2 rounded-md bg-black dark:bg-dark-btn flex justify-center items-center my-3"
-          disabled={isUpadtingUserInfo}
+          disabled={isUpalading}
         >
-          {isUpadtingUserInfo ? (
-            <Text className="text-lg  font-poppins-bold text-white">
+          {isUpalading ? (
+            <Text className="text-lg  font-nunito-semi text-white">
               {i18n.t('savingTxt')}
             </Text>
           ) : (
-            <Text className="text-lg  font-poppins-bold text-white">
-              {i18n.t('savedTxt')}
+            <Text className="text-lg  font-nunito-semi text-white">
+              {i18n.t('saveBtn')}
             </Text>
           )}
         </Pressable>

@@ -9,7 +9,7 @@ import { useSession } from '@fullauth/react-native';
 import * as Application from 'expo-application';
 import Constants from 'expo-constants';
 import * as Linking from 'expo-linking';
-import { router, SplashScreen } from 'expo-router';
+import { router } from 'expo-router';
 import { useContext, useEffect, useState } from 'react';
 import { Platform, Pressable, SafeAreaView, Text, View } from 'react-native';
 import semver from 'semver';
@@ -102,10 +102,10 @@ const update = () => {
             {i18n.t('enyankom')}
           </Text> */}
           </View>
-          <Text className="text-2xl font-bold text-center text-black dark:text-dark">
+          <Text className="text-2xl font-nunito-semi text-center text-black dark:text-dark">
             {i18n.t('outdatedTxt')}
           </Text>
-          <Text className="text-lg text-center text-black dark:text-dark">
+          <Text className="text-lg text-center font-nunito text-black dark:text-dark">
             {i18n.t('mustUpdateTxt')}
           </Text>
           <Pressable

@@ -65,7 +65,7 @@ export default function TabLayout() {
                   }
                 />
                 {focused && (
-                  <Text className="text-main font-semibold">
+                  <Text className="text-main font-nunito-semi">
                     {i18n.t('home')}
                   </Text>
                 )}
@@ -97,7 +97,7 @@ export default function TabLayout() {
                   }
                 />
                 {focused && (
-                  <Text className="text-main font-semibold">
+                  <Text className="text-main font-nunito-semi">
                     {i18n.t('favorites')}
                   </Text>
                 )}
@@ -128,7 +128,7 @@ export default function TabLayout() {
                   />
                 </View>
                 {focused && (
-                  <Text className="text-main font-semibold">
+                  <Text className="text-main font-nunito-semi">
                     {i18n.t('profile')}
                   </Text>
                 )}
